@@ -42,8 +42,8 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
               className={cn(
                 "rounded-full px-3 py-1 text-xs font-medium transition-colors",
                 category === c
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  ? "bg-abyss-500 text-white shadow-md shadow-abyss-950/50"
+                  : "bg-abyss-900/70 text-foam-300 ring-1 ring-inset ring-abyss-700/40 hover:bg-abyss-800/70 hover:text-foam-100"
               )}
             >
               {c}
@@ -53,7 +53,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
         <select
           value={tech}
           onChange={(e) => setTech(e.target.value)}
-          className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm"
+          className="rounded-lg border border-abyss-700/50 bg-abyss-900/70 px-3 py-1.5 text-sm text-foam-100 outline-none focus:border-abyss-500"
         >
           {allTech.map((t) => (
             <option key={t} value={t}>
@@ -68,7 +68,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
       </p>
 
       {filtered.length === 0 ? (
-        <div className="mt-8 rounded-xl border border-dashed border-gray-200 p-12 text-center text-sm text-gray-500">
+        <div className="mt-8 rounded-xl border border-dashed border-abyss-700/50 bg-abyss-900/30 p-12 text-center text-sm text-foam-500">
           Tidak ada project dengan filter ini.
         </div>
       ) : (

@@ -47,7 +47,7 @@ export default function AboutPage() {
                   {items.map((s) => (
                     <span
                       key={s.name}
-                      className="rounded-md border border-gray-200 px-3 py-1 text-sm"
+                      className="rounded-md border border-abyss-700/50 bg-abyss-900/50 px-3 py-1 text-sm text-foam-100"
                     >
                       {s.name}
                       {s.level && (

@@ -17,9 +17,12 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm">
+    <nav className="sticky top-0 z-50 border-b border-abyss-700/30 bg-abyss-950/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <Link href="/" className="text-lg font-semibold">
+        <Link
+          href="/"
+          className="bg-gradient-to-r from-abyss-300 to-abyss-500 bg-clip-text text-lg font-bold text-transparent"
+        >
           Firdaus Ramdan
         </Link>
         <ul className="flex gap-4 overflow-x-auto text-sm md:gap-6">
@@ -33,11 +36,16 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "transition-colors hover:text-blue-600",
-                    active ? "font-medium text-blue-600" : "text-gray-600"
+                    "relative py-1 transition-colors",
+                    active
+                      ? "text-foam-50"
+                      : "text-foam-300 hover:text-abyss-300"
                   )}
                 >
                   {item.label}
+                  {active && (
+                    <span className="absolute -bottom-[2px] left-0 h-[2px] w-full rounded-full bg-gradient-to-r from-abyss-300 to-abyss-500" />
+                  )}
                 </Link>
               </li>
             );

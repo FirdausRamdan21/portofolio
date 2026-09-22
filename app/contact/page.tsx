@@ -68,12 +68,12 @@ export default function ContactPage() {
               href={href}
               target={key === "email" ? undefined : "_blank"}
               rel="noreferrer"
-              className="flex items-center gap-3 rounded-xl border border-gray-200 p-4 transition-colors hover:border-blue-500 hover:bg-blue-50/50"
+              className="flex items-center gap-3 rounded-xl border border-abyss-700/40 bg-abyss-900/60 p-4 backdrop-blur-sm transition-colors hover:border-abyss-500/60 hover:bg-abyss-800/70"
             >
-              <Icon className="h-5 w-5 text-gray-500" />
+              <Icon className="h-5 w-5 text-abyss-300" />
               <div className="min-w-0">
-                <p className="text-sm font-medium">{label}</p>
-                <p className="truncate text-xs text-gray-500">{href}</p>
+                <p className="text-sm font-medium text-foam-100">{label}</p>
+                <p className="truncate text-xs text-foam-500">{href}</p>
               </div>
             </a>
           );
@@ -85,7 +85,7 @@ export default function ContactPage() {
           href={profile.contacts.tiktok}
           target="_blank"
           rel="noreferrer"
-          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-gray-200 p-4 text-sm font-medium transition-colors hover:border-blue-500 hover:bg-blue-50/50"
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-abyss-700/40 bg-abyss-900/60 p-4 text-sm font-medium text-foam-100 backdrop-blur-sm transition-colors hover:border-abyss-500/60 hover:bg-abyss-800/70"
         >
           <TiktokIcon className="h-4 w-4" />
           TikTok — {profile.alias}

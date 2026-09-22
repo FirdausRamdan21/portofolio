@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = baseMetadata;
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#091335",
   width: "device-width",
   initialScale: 1,
 };
@@ -26,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" className={inter.variable}>
-      <body className="flex min-h-screen flex-col font-sans antialiased">
+      <body className="flex min-h-screen flex-col font-sans">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

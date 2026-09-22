@@ -43,16 +43,16 @@ export default function InventoryTabs({
 
   return (
     <div>
-      <div className="flex gap-1 rounded-xl border border-gray-200 bg-gray-50 p-1">
+      <div className="flex gap-1 rounded-xl border border-abyss-700/40 bg-abyss-900/60 p-1 backdrop-blur-sm">
         {TABS.map((t) => (
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
             className={cn(
-              "flex-1 rounded-lg px-4 py-2 text-sm font-medium transition-colors",
+              "flex-1 rounded-lg px-4 py-2 text-sm font-medium transition-all",
               active === t.key
-                ? "bg-white text-blue-600 shadow-sm"
-                : "text-gray-600 hover:text-gray-900"
+                ? "bg-gradient-to-r from-abyss-500/30 to-abyss-600/30 text-foam-50 shadow-inner ring-1 ring-inset ring-abyss-500/40"
+                : "text-foam-300 hover:bg-abyss-800/50 hover:text-foam-100"
             )}
           >
             {t.label}

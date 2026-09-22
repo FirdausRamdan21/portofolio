@@ -27,9 +27,9 @@ export default function ToolGrid({
               href={t.url}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white p-4 transition-colors hover:border-blue-500 hover:bg-blue-50/50"
+             className="group flex items-center gap-3 rounded-xl border border-abyss-700/40 bg-abyss-900/60 p-4 backdrop-blur-sm transition-colors hover:border-abyss-500/60 hover:bg-abyss-800/70"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-sm font-bold uppercase text-gray-700">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-abyss-700 to-abyss-800 text-sm font-bold uppercase text-abyss-300">
                 {t.name.slice(0, 2)}
               </div>
               <div className="min-w-0 flex-1">
@@ -62,9 +62,8 @@ export default function ToolGrid({
               </>
             );
             const className = cn(
-              "flex gap-3 rounded-xl border border-gray-200 bg-white p-4",
-              n.url &&
-                "transition-colors hover:border-blue-500 hover:bg-blue-50/50"
+              "flex gap-3 rounded-xl border border-abyss-700/40 bg-abyss-900/60 p-4 backdrop-blur-sm",
+              n.url && "transition-colors hover:border-abyss-500/60 hover:bg-abyss-800/70"
             );
             return n.url ? (
               <a

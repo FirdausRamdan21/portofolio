@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import type { Activity } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import ActivityCard from "@/components/inventory/activity-card";
+import ActivityCard from "@/components/activity-card";
 import ActivityModal from "./activity-modal";
 
 const TYPES: { key: Activity["type"] | "All"; label: string }[] = [
@@ -38,8 +38,8 @@ export default function ActivityGrid({
             className={cn(
               "rounded-full px-3 py-1 text-xs font-medium transition-colors",
               type === t.key
-                ? "bg-blue-600 text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                ? "bg-abyss-500 text-white shadow-md shadow-abyss-950/50"
+                : "bg-abyss-900/70 text-foam-300 ring-1 ring-inset ring-abyss-700/40 hover:bg-abyss-800/70 hover:text-foam-100"
             )}
           >
             {t.label}

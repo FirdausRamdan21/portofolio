@@ -10,9 +10,11 @@ export default function Tag({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium",
-        variant === "default" && "bg-gray-100 text-gray-700",
-        variant === "outline" && "border border-gray-300 text-gray-700"
+        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
+        variant === "default" &&
+          "bg-abyss-800/70 text-abyss-300 ring-1 ring-inset ring-abyss-700/50",
+        variant === "outline" &&
+          "border border-abyss-700/60 text-foam-300"
       )}
     >
       {children}
