@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Activity } from "@/lib/types";
-import Tag from "./tag";
+import Tag from "../tag";
 
 const typeLabel: Record<Activity["type"], string> = {
   School: "Sekolah",
@@ -11,16 +11,22 @@ const typeLabel: Record<Activity["type"], string> = {
 
 export default function ActivityCard({ activity }: { activity: Activity }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white">
-      {activity.image && (
-        <div className="relative aspect-video bg-gray-100">
+    <div className="group h-full overflow-hidden rounded-xl border border-gray-200 bg-white transition-shadow hover:shadow-lg">
+      {activity.image ? (
+        <div className="relative aspect-video overflow-hidden bg-gray-100">
           <Image
             src={activity.image}
             alt={activity.title}
             fill
-            className="object-cover"
+            className="object-cover transition-transform group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
+        </div>
+      ) : (
+        <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-blue-50 to-gray-100">
+          <span className="text-3xl font-bold text-gray-300">
+            {activity.title.charAt(0)}
+          </span>
         </div>
       )}
       <div className="p-4">

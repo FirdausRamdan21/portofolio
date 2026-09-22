@@ -1,13 +1,21 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Project } from "@/lib/types";
+import { cn } from "@/lib/utils";
 import Tag from "./tag";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  className,
+}: {
+  project: Project;
+  className?: string;
+}) {
   return (
-    <Link
-      href={`/inventory/projects/${project.slug}`}
-      className="group block overflow-hidden rounded-xl border border-gray-200 bg-white transition-shadow hover:shadow-lg"
+    <div
+      className={cn(
+        "group h-full overflow-hidden rounded-xl border border-gray-200 bg-white transition-shadow hover:shadow-lg",
+        className
+      )}
     >
       <div className="relative aspect-video overflow-hidden bg-gray-100">
         <Image
@@ -29,6 +37,6 @@ export default function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

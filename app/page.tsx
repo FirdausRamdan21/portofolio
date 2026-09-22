@@ -62,8 +62,10 @@ export default function Home() {
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((p) => (
-            <ProjectCard key={p.id} project={p} />
-          ))}
+          <Link key={p.id} href={`/inventory/projects/${p.slug}`} className="block">
+            <ProjectCard project={p} />
+          </Link>
+        ))}
         </div>
       </section>
 

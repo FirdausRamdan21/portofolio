@@ -1,7 +1,7 @@
 import { activities } from "@/data/activities";
 import { buildMetadata } from "@/lib/seo";
 import SectionTitle from "@/components/section-title";
-import ActivityCard from "@/components/activity-card";
+import ActivityCard from "@/components/inventory/activity-card";
 
 export const metadata = buildMetadata({
   title: "Activities — Firdaus Ramdan",
