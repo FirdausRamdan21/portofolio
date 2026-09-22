@@ -8,7 +8,7 @@ export const projects: Project[] = [
     description:
       "Website resmi ekstrakurikuler Japanese Club Baka Danger untuk publikasi kegiatan, galeri, dan informasi anggota.",
     thumbnail: "/images/projects/japanese.png",
-    images: ["/images/projects/japanese-club-1.jpg"],
+    images: ["/images/projects/japanese.png"],
     tech: ["Next.js", "Tailwind CSS", "TypeScript"],
     learned: [
       "Membangun website responsif dari nol",
