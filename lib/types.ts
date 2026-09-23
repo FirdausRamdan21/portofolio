@@ -50,12 +50,13 @@ export type Project = {
   description: string;
   thumbnail: string;
   images?: string[];
+  documentation: string[];
   tech: string[];
   learned: string[];
   date: string;
   category: "Web" | "Data" | "UI" | "Other";
-  github?: string;
-  live?: string;
+  github: string;
+  live: string;
   featured: boolean;
   pinned?: boolean;
 };
@@ -68,11 +69,15 @@ export type Activity = {
   role: string;
   description: string;
   image?: string;
+  documentation: string[];
+  activities: string[];
+  learned: string[];
   startDate: string;
   endDate?: string;
   skills: string[];
   type: "School" | "Extracurricular" | "Outside" | "Digital";
-  pinned?:boolean;
+  pinned?: boolean;
+  url: string;
 };
 
 export type Tool = {

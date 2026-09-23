@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { activities } from "@/data/activities";
 import { buildMetadata } from "@/lib/seo";
 import Tag from "@/components/tag";
@@ -36,7 +37,7 @@ export default async function ActivityDetailPage({
   if (!activity) notFound();
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12">
+    <article className="mx-auto max-w-4xl px-4 py-12">
       <Link
         href="/inventory?tab=activities"
         className="inline-flex items-center gap-1.5 text-sm text-foam-500 transition-colors hover:text-abyss-300"
@@ -44,13 +45,13 @@ export default async function ActivityDetailPage({
         <ArrowLeft className="h-4 w-4" /> Kembali ke Inventory
       </Link>
 
-      <header className="mt-6">
-        <p className="text-xs text-foam-500">{activity.organization}</p>
-        <h1 className="mt-2 text-3xl font-bold text-foam-50">
+      <header className="mt-6 border-y border-abyss-700/50 py-7">
+        <p className="eyebrow">{activity.organization} · {activity.startDate}</p>
+        <h1 className="mt-3 max-w-3xl font-serif text-4xl font-bold leading-tight text-foam-50 md:text-6xl">
           {activity.title}
         </h1>
-        <p className="mt-1 text-sm text-abyss-300">{activity.role}</p>
-        <div className="mt-4 space-y-4 text-sm leading-7 text-foam-300">
+        <p className="mt-3 text-sm font-semibold uppercase tracking-wider text-coral-400">{activity.role}</p>
+        <div className="mt-6 max-w-3xl space-y-4 text-base leading-8 text-foam-300">
           {activity.description.split("<br><br>").map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -70,6 +71,20 @@ export default async function ActivityDetailPage({
       )}
 
       <section className="mt-10">
+        <h2 className="text-lg font-semibold text-foam-50">Dokumentasi</h2>
+        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-foam-300 marker:text-coral-400">
+          {activity.documentation.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="text-lg font-semibold text-foam-50">Kegiatan</h2>
+        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-foam-300 marker:text-coral-400">
+          {activity.activities.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+      </section>
+
+      <section className="mt-8">
         <h2 className="text-lg font-semibold text-foam-50">Skills</h2>
         <div className="mt-3 flex flex-wrap gap-2">
           {activity.skills.map((s) => (
@@ -77,6 +92,21 @@ export default async function ActivityDetailPage({
           ))}
         </div>
       </section>
+
+      <section className="mt-8">
+        <h2 className="text-lg font-semibold text-foam-50">Yang Dipelajari</h2>
+        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-foam-300 marker:text-coral-400">
+          {activity.learned.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+      </section>
+
+      {activity.url && (
+        <section className="mt-8 flex flex-wrap gap-2">
+          <a href={activity.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-lg border border-abyss-700/60 px-4 py-2 text-sm font-medium text-foam-100 hover:border-coral-400/60">
+            <BookOpen className="h-4 w-4" /> Sumber
+          </a>
+        </section>
+      )}
     </article>
   );
 }

@@ -47,13 +47,15 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-3">
-            <a
-              href={`mailto:${profile.contacts.email}`}
-              aria-label="Email"
-              className="rounded-full border border-abyss-700/40 bg-abyss-900/50 p-2 text-foam-300 backdrop-blur-sm transition-all hover:border-abyss-500/60 hover:bg-abyss-800/60 hover:text-abyss-300"
-            >
-              <Mail className="h-4 w-4" />
-            </a>
+            {profile.contacts.email && (
+              <a
+                href={`mailto:${profile.contacts.email}`}
+                aria-label="Email"
+                className="rounded-full border border-abyss-700/40 bg-abyss-900/50 p-2 text-foam-300 backdrop-blur-sm transition-all hover:border-abyss-500/60 hover:bg-abyss-800/60 hover:text-abyss-300"
+              >
+                <Mail className="h-4 w-4" />
+              </a>
+            )}
             {socials.map(
               ({ href, label, Icon }) =>
                 href && (

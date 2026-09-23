@@ -88,7 +88,14 @@ export default async function ProjectDetailPage({
       )}
 
       <section className="mt-10">
-        <h2 className="text-lg font-semibold text-foam-50">Tech Stack</h2>
+        <h2 className="text-lg font-semibold text-foam-50">Dokumentasi</h2>
+        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-foam-300 marker:text-coral-400">
+          {project.documentation.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-lg font-semibold text-foam-50">Tools</h2>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <Tag key={t}>{t}</Tag>
@@ -113,7 +120,7 @@ export default async function ProjectDetailPage({
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-lg border border-abyss-700/60 bg-abyss-900/60 px-4 py-2 text-sm font-medium text-foam-100 transition-colors hover:border-abyss-500/60 hover:bg-abyss-800/70"
           >
-            <GithubIcon className="h-4 w-4" /> Lihat di GitHub
+            <GithubIcon className="h-4 w-4" /> GitHub
           </a>
         )}
         {project.live && (

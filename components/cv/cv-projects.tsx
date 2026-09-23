@@ -21,7 +21,7 @@ export default function CvProjects({ items }: { items: Project[] }) {
           href={`/inventory/projects/${p.slug}`}
           className="group block break-inside-avoid"
         >
-          <div className="relative aspect-video overflow-hidden rounded-lg border border-abyss-700/40 bg-abyss-950 print:border-gray-300">
+          <div className="relative aspect-video overflow-hidden rounded-lg border border-abyss-700/40 bg-abyss-950 print:hidden">
             <Image
               src={p.thumbnail}
               alt={p.title}

@@ -3,10 +3,9 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { X, ExternalLink, ArrowRight } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import type { Project } from "@/lib/types";
 import Tag from "@/components/tag";
-import { GithubIcon } from "@/components/brand-icons";
 
 export default function ProjectModal({
   project,
@@ -90,26 +89,6 @@ export default function ProjectModal({
           </div>
 
           <div className="mt-6 flex flex-wrap gap-2">
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-abyss-700/60 bg-abyss-900/70 px-3 py-2 text-sm font-medium text-foam-100 transition-colors hover:border-abyss-500/60 hover:bg-abyss-800"
-              >
-                <GithubIcon className="h-4 w-4" /> GitHub
-              </a>
-            )}
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-abyss-700/60 bg-abyss-900/70 px-3 py-2 text-sm font-medium text-foam-100 transition-colors hover:border-abyss-500/60 hover:bg-abyss-800"
-              >
-                <ExternalLink className="h-4 w-4" /> Live
-              </a>
-            )}
             <Link
               href={`/inventory/projects/${project.slug}`}
               className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-abyss-500 to-abyss-600 px-3 py-2 text-sm font-medium text-white shadow-md shadow-abyss-950/50 transition-all hover:from-abyss-400 hover:to-abyss-500"
