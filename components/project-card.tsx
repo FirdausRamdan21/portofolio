@@ -13,7 +13,7 @@ export default function ProjectCard({
   return (
     <div
       className={cn(
-        "card-glow group h-full overflow-hidden rounded-xl border border-abyss-700/40 bg-abyss-900/60 backdrop-blur-sm",
+        "card-glow group h-full overflow-hidden rounded-lg border border-abyss-700/40 bg-abyss-900/70 backdrop-blur-sm",
         className
       )}
     >
@@ -27,9 +27,9 @@ export default function ProjectCard({
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-abyss-950/70 via-transparent to-transparent" />
       </div>
-      <div className="p-4">
+      <div className="p-5">
         <h3 className="font-semibold text-foam-50">{project.title}</h3>
-        <p className="mt-1 line-clamp-2 text-sm text-foam-300">
+        <p className="mt-2 line-clamp-2 text-sm leading-6 text-foam-300">
           {project.description}
         </p>
         <div className="mt-3 flex flex-wrap gap-1.5">

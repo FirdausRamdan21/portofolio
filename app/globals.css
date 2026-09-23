@@ -1,22 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* ===== Deep Sea — Surfaces ===== */
-  --color-abyss-950: #091335;   /* Infinite Night — base page */
-  --color-abyss-900: #0e1c48;   /* surface — section, card */
-  --color-abyss-850: #112459;   /* surface-2 — nested */
-  --color-abyss-800: #142e72;   /* Atlantic Navy — elevated, modal */
-  --color-abyss-700: #1f4ba5;   /* Sea of Tears — border-strong */
-  --color-abyss-600: #2d6fce;   /* Celtic Blue — accent-2 */
-  --color-abyss-500: #3c8cea;   /* Seljuk Blue — accent primary */
-  --color-abyss-400: #54abfb;   /* Joust Blue — accent hover */
-  --color-abyss-300: #74ccfd;   /* Bubbly Barracuda — highlight */
-
-  /* ===== Text — Sea Foam ===== */
+  --color-abyss-950: #091335;
+  --color-abyss-900: #0e1c48;
+  --color-abyss-850: #112459;
+  --color-abyss-800: #142e72;
+  --color-abyss-700: #1f4ba5;
+  --color-abyss-600: #2d6fce;
+  --color-abyss-500: #3c8cea;
+  --color-abyss-400: #54abfb;
+  --color-abyss-300: #74ccfd;
+  --color-coral-400: #ff9c78;
+  --color-coral-500: #f4775b;
   --color-foam-50: #f2f6fc;
-  --color-foam-100: #e6edf9;    /* primary text */
-  --color-foam-300: #9fb3d5;    /* secondary text */
-  --color-foam-500: #647aa0;    /* tertiary / meta */
+  --color-foam-100: #e6edf9;
+  --color-foam-300: #9fb3d5;
+  --color-foam-500: #647aa0;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
@@ -44,10 +43,25 @@ html {
 }
 
 body {
-  background-color: var(--color-abyss-950);
+  background:
+    radial-gradient(circle at 86% 8%, rgba(244, 119, 91, 0.08), transparent 25rem),
+    var(--color-abyss-950);
   color: var(--color-foam-100);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.32;
+  background-image: linear-gradient(rgba(116, 204, 253, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(116, 204, 253, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 70%);
 }
 
 /* Selection */
@@ -76,10 +90,9 @@ body {
 /* ===== Deep Sea Hero ===== */
 .sea-hero {
   background:
-    radial-gradient(ellipse 70% 50% at 50% 10%, rgba(60, 140, 234, 0.22), transparent 65%),
-    radial-gradient(ellipse 50% 40% at 15% 40%, rgba(45, 111, 206, 0.18), transparent 60%),
-    radial-gradient(ellipse 55% 45% at 90% 60%, rgba(20, 46, 114, 0.4), transparent 65%),
-    linear-gradient(180deg, #0e1c48 0%, #091335 100%);
+    radial-gradient(ellipse 55% 60% at 12% 24%, rgba(244, 119, 91, 0.13), transparent 65%),
+    radial-gradient(ellipse 70% 55% at 70% 5%, rgba(60, 140, 234, 0.24), transparent 65%),
+    linear-gradient(145deg, #0e1c48 0%, #091335 72%);
 }
 
 /* Wave divider glow */
@@ -117,4 +130,65 @@ body {
 .card-glow:hover {
   border-color: rgba(116, 204, 253, 0.28);
   box-shadow: 0 20px 50px -25px rgba(60, 140, 234, 0.5);
+}
+
+.eyebrow {
+  color: var(--color-coral-400);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Print / PDF — ATS friendly ===== */
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  /* Paksa semua warna jadi hitam-putih di dalam CV */
+  .cv-print-root,
+  .cv-print-root * {
+    background: transparent !important;
+    color: #111111 !important;
+    border-color: #e5e7eb !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -webkit-text-fill-color: #111111 !important;
+  }
+
+  .cv-print-root a {
+    color: #111111 !important;
+    text-decoration: none !important;
+  }
+
+  /* Sembunyikan elemen non-CV */
+  .no-print,
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  /* Cegah section terpotong antar halaman */
+  .cv-section,
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+
+  @page {
+    margin: 1.2cm;
+  }
 }

@@ -30,11 +30,11 @@ export const tools: Tool[] = [
     description: "Testing dan dokumentasi API.",
   },
   {
-    name: "Tiktok",
-    category: "tiktok",
+    name: "TikTok",
+    category: "Content Platform",
     url: "https://www.tiktok.com/@mr_north9?is_from_webapp=1&sender_device=pc",
     icon: "send",
-    description: ".",
+    description: "Platform publikasi konten edukasi teknologi.",
   },
 ];
 

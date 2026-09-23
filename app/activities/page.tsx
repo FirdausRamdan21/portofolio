@@ -2,6 +2,7 @@ import { activities } from "@/data/activities";
 import { buildMetadata } from "@/lib/seo";
 import SectionTitle from "@/components/section-title";
 import ActivityCard from "@/components/activity-card";
+import Link from "next/link";
 
 export const metadata = buildMetadata({
   title: "Activities — Firdaus Ramdan",
@@ -32,7 +33,7 @@ export default function ActivitiesPage() {
     <div className="mx-auto max-w-5xl px-4 py-12">
       <SectionTitle
         title="Activities"
-        subtitle="Pengalaman organisasi, volunteer, dan konten digital."
+        subtitle="Arsip pengalaman organisasi, pembelajaran, kontribusi sekolah, dan karya digital. Setiap entri terhubung dengan catatan lengkap di Inventory."
       />
 
       <div className="space-y-16">
@@ -44,7 +45,13 @@ export default function ActivitiesPage() {
               <h3 className="mb-6 text-lg font-semibold">{g.label}</h3>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((a) => (
-                  <ActivityCard key={a.id} activity={a} />
+                  <Link
+                    key={a.id}
+                    href={`/inventory/activities/${a.slug}`}
+                    className="block h-full"
+                  >
+                    <ActivityCard activity={a} />
+                  </Link>
                 ))}
               </div>
             </section>

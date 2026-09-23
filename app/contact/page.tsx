@@ -29,7 +29,9 @@ const items: {
     key: "email",
     label: "Email",
     icon: Mail,
-    href: `mailto:${profile.contacts.email}`,
+    href: profile.contacts.email
+      ? `mailto:${profile.contacts.email}`
+      : undefined,
   },
   {
     key: "github",

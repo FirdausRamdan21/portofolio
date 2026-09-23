@@ -17,8 +17,7 @@ export const projects: Project[] = [
     ],
     date: "2025-03",
     category: "Web",
-    github: "https://github.com/username/japanese-club",
-    live: "https://japanese-club.vercel.app",
     featured: true,
+    pinned: true,
   }
 ]

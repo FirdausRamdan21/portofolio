@@ -1,7 +1,15 @@
+export type Service = {
+  id: string;
+  title: string;
+  description: string;
+  icon: "code" | "layout" | "server" | "chart" | "video";
+};
+
 export type Skill = {
   name: string;
-  category: "Language" | "Framework" | "Database" | "Tool";
+  category: "Language" | "Framework" | "Database" | "Tool" | "Soft Skill";
   level?: "Beginner" | "Intermediate" | "Advanced";
+  progress?: number;
 };
 
 export type Profile = {
@@ -21,6 +29,8 @@ export type Profile = {
     youtube?: string;
   };
   cvUrl: string;
+   summary: string;      
+  languages: Language[];
 };
 
 export type HistoryItem = {
@@ -47,6 +57,7 @@ export type Project = {
   github?: string;
   live?: string;
   featured: boolean;
+  pinned?: boolean;
 };
 
 export type Activity = {
@@ -61,6 +72,7 @@ export type Activity = {
   endDate?: string;
   skills: string[];
   type: "School" | "Extracurricular" | "Outside" | "Digital";
+  pinned?:boolean;
 };
 
 export type Tool = {
@@ -77,4 +89,17 @@ export type ToolNote = {
   description: string;
   type: "Note" | "File" | "Info";
   url?: string;
+};
+
+export type Certificate = {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  credentialUrl?: string;
+};
+
+export type Language = {
+  name: string;
+  level: "Native" | "Fluent" | "Intermediate" | "Basic";
 };

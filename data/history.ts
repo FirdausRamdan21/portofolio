@@ -14,12 +14,12 @@ export const history: HistoryItem[] = [
 
    {
     id: "freecampcoding-frontend",
-    title: "Front end Engeener",
+    title: "Front-end Development",
     institution: "FreeCodeCamp",
     major: "Software Engineering",
     startDate: "2026-05",
     endDate: "2027-07",
     description:
-      "Fokus pada peemahaman dalam merancang, perintah, dan perangkat lunak Front end",
+      "Pembelajaran mandiri yang berfokus pada pemahaman dasar perancangan dan pengembangan perangkat lunak front-end.",
   },
 ];

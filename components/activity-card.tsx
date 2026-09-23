@@ -36,8 +36,8 @@ export default function ActivityCard({ activity }: { activity: Activity }) {
         </span>
         <h3 className="mt-1 font-semibold text-foam-50">{activity.title}</h3>
         <p className="text-sm text-foam-500">{activity.organization}</p>
-        <p className="mt-2 line-clamp-3 text-sm text-foam-300">
-          {activity.description}
+        <p className="mt-2 line-clamp-3 text-sm leading-6 text-foam-300">
+          {activity.description.split("<br><br>")[0]}
         </p>
         <div className="mt-3 flex flex-wrap gap-1.5">
           {activity.skills.slice(0, 3).map((s) => (

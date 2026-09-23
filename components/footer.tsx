@@ -42,7 +42,7 @@ export default function Footer() {
 
         <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 px-4 pt-20 pb-10 sm:flex-row sm:justify-between">
           <div className="text-center sm:text-left">
-            <p className="font-semibold text-foam-50">{profile.name}</p>
+            <p className="font-semibold tracking-wide text-foam-50">{profile.name}<span className="text-coral-400">.</span></p>
             <p className="text-sm text-foam-300">{profile.role}</p>
           </div>
 

@@ -17,7 +17,7 @@ export default function InventoryPage() {
     <div className="mx-auto max-w-5xl px-4 py-12">
       <SectionTitle
         title="Inventory"
-        subtitle="Arsip project, aktivitas, dan tools yang aku pakai."
+        subtitle="Pusat arsip untuk project, aktivitas, pembelajaran, dan tools. Gunakan tab untuk menelusuri setiap catatan secara terstruktur."
       />
       <Suspense fallback={<p className="text-sm text-gray-500">Loading…</p>}>
         <InventoryTabs

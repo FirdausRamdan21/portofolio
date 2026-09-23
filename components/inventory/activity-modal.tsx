@@ -70,7 +70,11 @@ export default function ActivityModal({
             {activity.title}
           </h2>
           <p className="mt-1 text-sm text-abyss-300">{activity.role}</p>
-          <p className="mt-3 text-foam-300">{activity.description}</p>
+          <div className="mt-4 space-y-3 text-sm leading-6 text-foam-300">
+            {activity.description.split("<br><br>").map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
           <div className="mt-4">
             <h3 className="text-sm font-semibold text-foam-100">Skills</h3>

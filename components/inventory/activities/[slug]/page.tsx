@@ -50,7 +50,11 @@ export default async function ActivityDetailPage({
           {activity.title}
         </h1>
         <p className="mt-1 text-sm text-abyss-300">{activity.role}</p>
-        <p className="mt-3 text-foam-300">{activity.description}</p>
+        <div className="mt-4 space-y-4 text-sm leading-7 text-foam-300">
+          {activity.description.split("<br><br>").map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
       </header>
 
       {activity.image && (
