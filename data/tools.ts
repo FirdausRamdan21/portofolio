@@ -2,13 +2,6 @@ import type { Tool, ToolNote } from "@/lib/types";
 
 export const tools: Tool[] = [
   {
-    name: "VS Code",
-    category: "Editor",
-    url: "https://code.visualstudio.com",
-    icon: "code",
-    description: "Code editor utama untuk development.",
-  },
-  {
     name: "GitHub",
     category: "Version Control",
     url: "https://github.com",
@@ -16,9 +9,9 @@ export const tools: Tool[] = [
     description: "Hosting repository dan kolaborasi.",
   },
   {
-    name: "Figma",
+    name: "Excalidraw",
     category: "Design",
-    url: "https://figma.com",
+    url: "https://excalidraw.com",
     icon: "figma",
     description: "Desain UI dan prototyping.",
   },
@@ -35,6 +28,13 @@ export const tools: Tool[] = [
     url: "https://postman.com",
     icon: "send",
     description: "Testing dan dokumentasi API.",
+  },
+  {
+    name: "Tiktok",
+    category: "tiktok",
+    url: "https://www.tiktok.com/@mr_north9?is_from_webapp=1&sender_device=pc",
+    icon: "send",
+    description: ".",
   },
 ];
 
@@ -55,8 +55,8 @@ export const toolNotes: ToolNote[] = [
   {
     id: "cv",
     title: "Curriculum Vitae",
-    description: "CV terbaru dalam format PDF.",
+    description: "CV Firdaus Ramdan.",
     type: "File",
-    url: "/documents/CV-Firdaus-Ramdan.pdf",
+    url: "https://drive.google.com/file/d/1BQA7NolrfSSZ5nkliSBkhdsuoU-Uo1uo/view?usp=drive_link",
   },
 ];

@@ -11,4 +11,15 @@ export const history: HistoryItem[] = [
     description:
       "Fokus pada pemrograman web, basis data, dan rekayasa perangkat lunak. Aktif di ekstrakurikuler dan organisasi sekolah.",
   },
+
+   {
+    id: "freecampcoding-frontend",
+    title: "Front end Engeener",
+    institution: "FreeCodeCamp",
+    major: "Software Engineering",
+    startDate: "2026-05",
+    endDate: "2027-07",
+    description:
+      "Fokus pada peemahaman dalam merancang, perintah, dan perangkat lunak Front end",
+  },
 ];
