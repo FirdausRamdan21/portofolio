@@ -40,22 +40,26 @@ export default async function ProjectDetailPage({
     <article className="mx-auto max-w-3xl px-4 py-12">
       <Link
         href="/inventory?tab=projects"
-        className="inline-flex items-center gap-1.5 text-sm text-gray-500 transition-colors hover:text-blue-600"
+        className="inline-flex items-center gap-1.5 text-sm text-foam-500 transition-colors hover:text-abyss-300"
       >
         <ArrowLeft className="h-4 w-4" /> Kembali ke Inventory
       </Link>
 
       <header className="mt-6">
-        <div className="flex items-center gap-2 text-xs text-gray-500">
-          <span>{project.category}</span>
+        <div className="flex items-center gap-2 text-xs text-foam-500">
+          <span className="rounded-full bg-abyss-800/70 px-2.5 py-0.5 text-abyss-300 ring-1 ring-inset ring-abyss-700/50">
+            {project.category}
+          </span>
           <span>·</span>
           <span>{project.date}</span>
         </div>
-        <h1 className="mt-2 text-3xl font-bold">{project.title}</h1>
-        <p className="mt-3 text-gray-700">{project.description}</p>
+        <h1 className="mt-3 text-3xl font-bold text-foam-50">
+          {project.title}
+        </h1>
+        <p className="mt-3 text-foam-300">{project.description}</p>
       </header>
 
-      <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-gray-100">
+      <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-abyss-900 ring-1 ring-abyss-700/40">
         <Image
           src={project.thumbnail}
           alt={project.title}
@@ -70,7 +74,7 @@ export default async function ProjectDetailPage({
           {project.images.map((img, i) => (
             <div
               key={i}
-              className="relative aspect-video overflow-hidden rounded-xl bg-gray-100"
+              className="relative aspect-video overflow-hidden rounded-xl bg-abyss-900 ring-1 ring-abyss-700/40"
             >
               <Image
                 src={img}
@@ -84,7 +88,7 @@ export default async function ProjectDetailPage({
       )}
 
       <section className="mt-10">
-        <h2 className="text-lg font-semibold">Tech Stack</h2>
+        <h2 className="text-lg font-semibold text-foam-50">Tech Stack</h2>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.tech.map((t) => (
             <Tag key={t}>{t}</Tag>
@@ -93,8 +97,8 @@ export default async function ProjectDetailPage({
       </section>
 
       <section className="mt-8">
-        <h2 className="text-lg font-semibold">Yang Dipelajari</h2>
-        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-gray-700">
+        <h2 className="text-lg font-semibold text-foam-50">Yang Dipelajari</h2>
+        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-foam-300 marker:text-abyss-400">
           {project.learned.map((l) => (
             <li key={l}>{l}</li>
           ))}
@@ -107,7 +111,7 @@ export default async function ProjectDetailPage({
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-abyss-700/60 bg-abyss-900/60 px-4 py-2 text-sm font-medium text-foam-100 transition-colors hover:border-abyss-500/60 hover:bg-abyss-800/70"
           >
             <GithubIcon className="h-4 w-4" /> Lihat di GitHub
           </a>
@@ -117,7 +121,7 @@ export default async function ProjectDetailPage({
             href={project.live}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+            className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-abyss-500 to-abyss-600 px-4 py-2 text-sm font-medium text-white shadow-lg shadow-abyss-950/50 transition-all hover:from-abyss-400 hover:to-abyss-500"
           >
             <ExternalLink className="h-4 w-4" /> Live Demo
           </a>

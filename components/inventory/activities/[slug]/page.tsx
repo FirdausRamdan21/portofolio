@@ -39,20 +39,22 @@ export default async function ActivityDetailPage({
     <article className="mx-auto max-w-3xl px-4 py-12">
       <Link
         href="/inventory?tab=activities"
-        className="inline-flex items-center gap-1.5 text-sm text-gray-500 transition-colors hover:text-blue-600"
+        className="inline-flex items-center gap-1.5 text-sm text-foam-500 transition-colors hover:text-abyss-300"
       >
         <ArrowLeft className="h-4 w-4" /> Kembali ke Inventory
       </Link>
 
       <header className="mt-6">
-        <p className="text-xs text-gray-500">{activity.organization}</p>
-        <h1 className="mt-2 text-3xl font-bold">{activity.title}</h1>
-        <p className="mt-1 text-sm text-blue-600">{activity.role}</p>
-        <p className="mt-3 text-gray-700">{activity.description}</p>
+        <p className="text-xs text-foam-500">{activity.organization}</p>
+        <h1 className="mt-2 text-3xl font-bold text-foam-50">
+          {activity.title}
+        </h1>
+        <p className="mt-1 text-sm text-abyss-300">{activity.role}</p>
+        <p className="mt-3 text-foam-300">{activity.description}</p>
       </header>
 
       {activity.image && (
-        <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-gray-100">
+        <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-abyss-900 ring-1 ring-abyss-700/40">
           <Image
             src={activity.image}
             alt={activity.title}
@@ -64,7 +66,7 @@ export default async function ActivityDetailPage({
       )}
 
       <section className="mt-10">
-        <h2 className="text-lg font-semibold">Skills</h2>
+        <h2 className="text-lg font-semibold text-foam-50">Skills</h2>
         <div className="mt-3 flex flex-wrap gap-2">
           {activity.skills.map((s) => (
             <Tag key={s}>{s}</Tag>
