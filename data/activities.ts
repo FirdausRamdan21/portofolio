@@ -120,6 +120,54 @@ export const activities: Activity[] = [
     url: "https://discord.gg/AVs7pCuNp",
   },
   {
+    id: "event-NIROM",
+    slug: "event-NIROM",
+    title: "Event NIROM Radio — Minerva Cafe",
+    organization: "Minerva Cafe Server",
+    role: "Event Organizer & Broadcaster",
+
+    description:
+      "NIROM Radio merupakan event musik bertema nostalgia yang diselenggarakan pada Sabtu, 4 Juli 2026 di Minerva Cafe Server. Acara ini menghadirkan tiga segmen musik, yaitu Album Nona Ria, Musik Indo-Belanda, dan Musik Indonesia Jadul. Bersama Raden, saya berperan sebagai broadcaster untuk menemani para pendengar melalui rangkaian lagu bernuansa klasik, menghadirkan suasana yang tenang, nyaman, dan membawa pendengar kembali mengenang musik dari masa lalu.<br><br>" +
+      "Sebagai broadcaster kedua, saya tidak hanya membacakan dan memperkenalkan lagu, tetapi juga berusaha menjaga alur siaran agar tetap nyaman diikuti. Pergantian lagu dan segmen dibawakan dengan komunikasi yang santai sehingga suasana acara tetap terasa seperti sebuah program radio yang menemani pendengar, khususnya bagi mereka yang ingin bersantai atau mendengarkan musik sebelum tidur.<br><br>" +
+      "Dalam persiapannya, saya turut merancang desain poster, menyusun roadmap acara, serta berdiskusi mengenai pembagian dan konsep setiap segmen musik. Pengalaman ini menggabungkan pekerjaan di balik layar sebagai event organizer dengan peran di depan pendengar sebagai broadcaster.",
+
+    image: "/images/activity/minerva/event-nirom.png",
+
+    documentation: [
+      "Poster NIROM"
+    ],
+
+    activities: [
+      "Merancang desain poster sebagai media publikasi acara.",
+      "Menyusun roadmap kegiatan dan alur pelaksanaan event.",
+      "Berdiskusi mengenai konsep serta pembagian segmen musik.",
+      "Berperan sebagai broadcaster kedua bersama Raden.",
+      "Membawakan siaran dengan gaya komunikasi yang tenang dan sesuai dengan suasana musik nostalgia.",
+      "Menjaga alur komunikasi selama acara agar pendengar tetap dapat mengikuti rangkaian siaran."
+    ],
+
+    learned: [
+      "Event Management",
+      "Broadcasting",
+      "Moderasi Komunitas",
+      "Komunikasi",
+      "Public Speaking"
+    ],
+
+    startDate: "2026-07",
+
+    skills: [
+      "Event Management",
+      "Broadcasting",
+      "Moderation",
+      "Public Speaking"
+    ],
+
+    type: "Outside",
+
+    url: "https://discord.gg/AVs7pCuNp",
+  },  
+  {
     id: "freecodecamp-activity",
     slug: "freecodecamp-frontend-learning",
     title: "Front End Development Learning",
