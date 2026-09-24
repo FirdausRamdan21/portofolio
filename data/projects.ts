@@ -18,7 +18,7 @@ export const projects: Project[] = [
     ],
     date: "2025-03",
     category: "Web",
-    github: "",
+    github: "https://github.com/FirdausRamdan21/Japanese",
     live: "https://bakadangerjp.vercel.app/",
     featured: true,
     pinned: true,

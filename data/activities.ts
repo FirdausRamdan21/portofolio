@@ -33,7 +33,7 @@ export const activities: Activity[] = [
     ],
     type: "Extracurricular",
     pinned: true,
-    url: "",
+    url: "https://bakadangerjp.vercel.app/#kontak",
   },
   {
     id: "perpustakaan",
@@ -64,7 +64,7 @@ export const activities: Activity[] = [
     ],
     type: "School",
     pinned: false,
-    url: "",
+    url: "https://perpusdepan.online/perpustakaan/index.php?p=libinfo",
   },
    {
     id: "certificate-AI",
@@ -172,7 +172,7 @@ export const activities: Activity[] = [
     ],
     type: "Outside",
     pinned: true,
-    url: "",
+    url: "https://www.freecodecamp.org/firdausramdan",
   },
   {
     id: "mrnorth9",
