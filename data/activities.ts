@@ -117,7 +117,7 @@ export const activities: Activity[] = [
       "Public Speaking",
     ],
     type: "Outside",
-    url: "",
+    url: "https://discord.gg/AVs7pCuNp",
   },
   {
     id: "freecodecamp-activity",
