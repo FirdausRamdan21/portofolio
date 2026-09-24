@@ -96,6 +96,18 @@ export type ToolNote = {
   url?: string;
 };
 
+export type Design = {
+  id: string;
+  title: string;
+  description: string;
+  image?: string;
+  video?: string;
+  mediaType: "image" | "video";
+  category: "Poster" | "Illustration" | "Painting" | "Video" | "Other";
+  tools: string[];
+  source?: string;
+};
+
 export type Certificate = {
   id: string;
   title: string;

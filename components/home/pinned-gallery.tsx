@@ -110,7 +110,7 @@ function GalleryCard({
         src={item.image}
         alt={item.title}
         fill
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        className="object-contain bg-abyss-950/70 p-2 transition-transform duration-700 group-hover:scale-[1.02]"
         sizes={large ? "(max-width: 1024px) 100vw, 66vw" : "(max-width: 1024px) 100vw, 33vw"}
       />
 

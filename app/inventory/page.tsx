@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { projects } from "@/data/projects";
 import { activities } from "@/data/activities";
 import { tools, toolNotes } from "@/data/tools";
+import { designs } from "@/data/designs";
 import { buildMetadata } from "@/lib/seo";
 import SectionTitle from "@/components/section-title";
 import InventoryTabs from "@/components/inventory/inventory-tabs";
@@ -25,6 +26,7 @@ export default function InventoryPage() {
           activities={activities}
           tools={tools}
           notes={toolNotes}
+          designs={designs}
         />
       </Suspense>
     </div>

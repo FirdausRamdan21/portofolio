@@ -2,17 +2,19 @@
 
 import { useCallback } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-import type { Activity, Project, Tool, ToolNote } from "@/lib/types";
+import type { Activity, Design, Project, Tool, ToolNote } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import ProjectGrid from "./project-grid";
 import ActivityGrid from "./activity-grid";
 import ToolGrid from "./tool-grid";
+import DesignGrid from "./design-grid";
 
-type TabKey = "projects" | "activities" | "tools";
+type TabKey = "projects" | "activities" | "designs" | "tools";
 
 const TABS: { key: TabKey; label: string }[] = [
   { key: "projects", label: "Projects" },
   { key: "activities", label: "Activities" },
+  { key: "designs", label: "Creative" },
   { key: "tools", label: "Tools & Info" },
 ];
 
@@ -21,11 +23,13 @@ export default function InventoryTabs({
   activities,
   tools,
   notes,
+  designs,
 }: {
   projects: Project[];
   activities: Activity[];
   tools: Tool[];
   notes: ToolNote[];
+  designs: Design[];
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -63,6 +67,7 @@ export default function InventoryTabs({
       <div className="mt-8">
         {active === "projects" && <ProjectGrid projects={projects} />}
         {active === "activities" && <ActivityGrid activities={activities} />}
+        {active === "designs" && <DesignGrid designs={designs} />}
         {active === "tools" && <ToolGrid tools={tools} notes={notes} />}
       </div>
     </div>
