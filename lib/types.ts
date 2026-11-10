@@ -43,14 +43,29 @@ export type HistoryItem = {
   description?: string;
 };
 
+export type ProjectReportSection = {
+  module: string;
+  title: string;
+  image: string;
+  points: string[];
+};
+
+export type ProjectReport = {
+  title: string;
+  documentUrl?: string;
+  sections: ProjectReportSection[];
+};
+
 export type Project = {
   id: string;
   slug: string;
   title: string;
   description: string;
+  logo?: string;
   thumbnail: string;
   images?: string[];
   documentation: string[];
+  report?: ProjectReport;
   tech: string[];
   learned: string[];
   date: string;

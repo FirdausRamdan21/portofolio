@@ -40,7 +40,7 @@ export default function PinnedGallery() {
                 src={project.thumbnail}
                 alt={project.title}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-abyss-950/80 via-transparent to-transparent" />
@@ -55,6 +55,17 @@ export default function PinnedGallery() {
                   {project.date}
                 </span>
               </div>
+
+              {project.logo && (
+                <div className="absolute right-4 top-4 h-11 w-11 overflow-hidden rounded-xl border border-abyss-700/60 bg-white p-1 shadow-lg">
+                  <Image
+                    src={project.logo}
+                    alt={`Logo ${project.title}`}
+                    fill
+                    className="object-contain p-0.5"
+                  />
+                </div>
+              )}
             </div>
 
             {/* Card Body */}

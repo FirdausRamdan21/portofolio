@@ -34,7 +34,7 @@ export default function ProjectCard({
             src={project.thumbnail}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-abyss-950/70 via-transparent to-transparent" />
@@ -48,6 +48,17 @@ export default function ProjectCard({
               {project.date}
             </span>
           </div>
+
+          {project.logo && (
+            <div className="absolute right-3 top-3 h-9 w-9 overflow-hidden rounded-lg border border-abyss-700/60 bg-white p-0.5 shadow-md">
+              <Image
+                src={project.logo}
+                alt={`Logo ${project.title}`}
+                fill
+                className="object-contain p-0.5"
+              />
+            </div>
+          )}
         </div>
 
         {/* Content */}

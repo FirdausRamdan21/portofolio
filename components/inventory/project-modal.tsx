@@ -51,10 +51,20 @@ export default function ProjectModal({
             src={project.thumbnail}
             alt={project.title}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 672px"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-abyss-900 via-transparent to-transparent" />
+          {project.logo && (
+            <div className="absolute left-4 bottom-4 h-12 w-12 overflow-hidden rounded-xl border border-abyss-700/60 bg-white p-1 shadow-lg">
+              <Image
+                src={project.logo}
+                alt={`Logo ${project.title}`}
+                fill
+                className="object-contain p-0.5"
+              />
+            </div>
+          )}
         </div>
 
         <div className="p-6">
@@ -89,11 +99,12 @@ export default function ProjectModal({
           </div>
 
           <div className="mt-6 flex flex-wrap gap-2">
-            <Link
+              <Link
               href={`/inventory/projects/${project.slug}`}
-              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-abyss-500 to-abyss-600 px-3 py-2 text-sm font-medium text-white shadow-md shadow-abyss-950/50 transition-all hover:from-abyss-400 hover:to-abyss-500"
+              className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 px-4 py-2 text-sm font-medium text-white shadow-md shadow-abyss-950/50 transition-all hover:from-sky-400 hover:to-blue-500"
             >
-              Lihat Detail <ArrowRight className="h-4 w-4" />
+              {project.report ? "Lihat Detail & Laporan Lengkap" : "Lihat Detail"}{" "}
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
