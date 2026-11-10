@@ -8,14 +8,15 @@ import ProjectGrid from "./project-grid";
 import ActivityGrid from "./activity-grid";
 import ToolGrid from "./tool-grid";
 import DesignGrid from "./design-grid";
+import { FolderGit2, CalendarCheck, Palette, Wrench } from "lucide-react";
 
 type TabKey = "projects" | "activities" | "designs" | "tools";
 
-const TABS: { key: TabKey; label: string }[] = [
-  { key: "projects", label: "Projects" },
-  { key: "activities", label: "Activities" },
-  { key: "designs", label: "Creative" },
-  { key: "tools", label: "Tools & Info" },
+const TABS: { key: TabKey; label: string; icon: any }[] = [
+  { key: "projects", label: "Proyek Utama", icon: FolderGit2 },
+  { key: "activities", label: "Aktivitas & Organisasi", icon: CalendarCheck },
+  { key: "designs", label: "Desain Grafis", icon: Palette },
+  { key: "tools", label: "Perangkat & Catatan", icon: Wrench },
 ];
 
 export default function InventoryTabs({
@@ -47,21 +48,30 @@ export default function InventoryTabs({
 
   return (
     <div>
-      <div className="flex gap-1 rounded-xl border border-abyss-700/40 bg-abyss-900/60 p-1 backdrop-blur-sm">
-        {TABS.map((t) => (
-          <button
-            key={t.key}
-            onClick={() => setTab(t.key)}
-            className={cn(
-              "flex-1 rounded-lg px-4 py-2 text-sm font-medium transition-all",
-              active === t.key
-                ? "bg-gradient-to-r from-abyss-500/30 to-abyss-600/30 text-foam-50 shadow-inner ring-1 ring-inset ring-abyss-500/40"
-                : "text-foam-300 hover:bg-abyss-800/50 hover:text-foam-100"
-            )}
-          >
-            {t.label}
-          </button>
-        ))}
+      {/* Scrollable Tabs Wrapper on Mobile */}
+      <div className="overflow-x-auto pb-2 scrollbar-none">
+        <div className="inline-flex min-w-full sm:flex gap-1.5 rounded-2xl border border-abyss-800/80 bg-abyss-900/60 p-1.5 backdrop-blur-sm">
+          {TABS.map((t) => {
+            const Icon = t.icon;
+            const isCurrent = active === t.key;
+            return (
+              <button
+                key={t.key}
+                type="button"
+                onClick={() => setTab(t.key)}
+                className={cn(
+                  "flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold transition-all whitespace-nowrap flex-1",
+                  isCurrent
+                    ? "bg-sky-500 text-abyss-950 shadow-md shadow-sky-500/20 font-bold"
+                    : "text-foam-300 hover:bg-abyss-800/60 hover:text-foam-100"
+                )}
+              >
+                <Icon className={cn("h-4 w-4", isCurrent ? "text-abyss-950" : "text-sky-400")} />
+                <span>{t.label}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="mt-8">

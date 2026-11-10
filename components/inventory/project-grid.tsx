@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, LayoutGrid, Images } from "lucide-react";
+import { ChevronLeft, ChevronRight, LayoutGrid, Images, ArrowUpRight } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { Project } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
   const [category, setCategory] = useState<CategoryFilter>("All");
   const [tech, setTech] = useState<string>("All");
   const [selected, setSelected] = useState<Project | null>(null);
-  const [view, setView] = useState<"gallery" | "grid">("gallery");
+  const [view, setView] = useState<"grid" | "gallery">("grid");
   const [galleryIndex, setGalleryIndex] = useState(0);
 
   const allTech = useMemo(() => {
@@ -44,6 +44,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
 
   return (
     <div>
+      {/* Category Pills & Tech Filter */}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap gap-1.5">
           {categories.map((c) => (
@@ -51,67 +52,147 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
               key={c}
               onClick={() => { setCategory(c); setGalleryIndex(0); }}
               className={cn(
-                "rounded-full px-3 py-1 text-xs font-medium transition-colors",
+                "rounded-full px-3.5 py-1 text-xs font-semibold transition-all",
                 category === c
-                  ? "bg-abyss-500 text-white shadow-md shadow-abyss-950/50"
-                  : "bg-abyss-900/70 text-foam-300 ring-1 ring-inset ring-abyss-700/40 hover:bg-abyss-800/70 hover:text-foam-100"
+                  ? "bg-sky-500 text-abyss-950 shadow-md shadow-sky-500/20"
+                  : "bg-abyss-900/80 text-foam-300 ring-1 ring-inset ring-abyss-700/60 hover:bg-abyss-800 hover:text-foam-100"
               )}
             >
-              {c}
+              {c === "All" ? "Semua Kategori" : c}
             </button>
           ))}
         </div>
         <select
           value={tech}
           onChange={(e) => { setTech(e.target.value); setGalleryIndex(0); }}
-          className="rounded-lg border border-abyss-700/50 bg-abyss-900/70 px-3 py-1.5 text-sm text-foam-100 outline-none focus:border-abyss-500"
+          className="rounded-xl border border-abyss-700/60 bg-abyss-900/80 px-3.5 py-1.5 text-xs font-medium text-foam-100 outline-none focus:border-sky-500"
         >
           {allTech.map((t) => (
             <option key={t} value={t}>
-              {t === "All" ? "Semua Tech" : t}
+              {t === "All" ? "Semua Teknologi" : t}
             </option>
           ))}
         </select>
       </div>
 
-      <div className="mt-5 flex items-center justify-between gap-3">
-        <p className="text-xs text-foam-500">
-        {filtered.length} project{filtered.length !== 1 && "s"}
+      {/* Control bar */}
+      <div className="mt-5 flex items-center justify-between gap-3 border-b border-abyss-800/80 pb-3">
+        <p className="text-xs font-medium text-foam-400">
+          Menampilkan <strong className="text-foam-100">{filtered.length}</strong> proyek
         </p>
-        <div className="flex rounded-lg border border-abyss-700/40 bg-abyss-900/60 p-1">
-          <button type="button" onClick={() => setView("gallery")} aria-label="Tampilan galeri" className={cn("rounded-md p-2", view === "gallery" ? "bg-coral-500 text-abyss-950" : "text-foam-300 hover:text-foam-50")}><Images className="h-4 w-4" /></button>
-          <button type="button" onClick={() => setView("grid")} aria-label="Tampilan kotak-kotak" className={cn("rounded-md p-2", view === "grid" ? "bg-coral-500 text-abyss-950" : "text-foam-300 hover:text-foam-50")}><LayoutGrid className="h-4 w-4" /></button>
+        <div className="flex rounded-lg border border-abyss-700/60 bg-abyss-900/60 p-0.5">
+          <button
+            type="button"
+            onClick={() => setView("grid")}
+            aria-label="Tampilan Grid"
+            className={cn(
+              "rounded-md p-1.5 transition-colors",
+              view === "grid" ? "bg-sky-500 text-abyss-950 font-bold" : "text-foam-400 hover:text-foam-100"
+            )}
+          >
+            <LayoutGrid className="h-4 w-4" />
+          </button>
+          <button
+            type="button"
+            onClick={() => setView("gallery")}
+            aria-label="Tampilan Showcase"
+            className={cn(
+              "rounded-md p-1.5 transition-colors",
+              view === "gallery" ? "bg-sky-500 text-abyss-950 font-bold" : "text-foam-400 hover:text-foam-100"
+            )}
+          >
+            <Images className="h-4 w-4" />
+          </button>
         </div>
       </div>
 
+      {/* Content View */}
       {filtered.length === 0 ? (
-        <div className="mt-8 rounded-xl border border-dashed border-abyss-700/50 bg-abyss-900/30 p-12 text-center text-sm text-foam-500">
-          Tidak ada project dengan filter ini.
+        <div className="mt-8 rounded-2xl border border-dashed border-abyss-800 bg-abyss-900/30 p-12 text-center text-sm text-foam-500">
+          Tidak ada proyek yang sesuai dengan kriteria filter yang dipilih.
         </div>
-      ) : view === "gallery" ? (
-        <div className="mt-4 overflow-hidden rounded-2xl border border-abyss-700/40 bg-abyss-900/60">
-          <div className="relative aspect-[16/9] min-h-72 bg-abyss-950">
-            {activeProject && <Image src={activeProject.thumbnail} alt={activeProject.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 900px" />}
-            <div className="absolute inset-0 bg-gradient-to-t from-abyss-950 via-transparent to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-7">
-              <div><p className="eyebrow">{activeProject?.category} · {activeProject?.date}</p><h3 className="mt-2 text-2xl font-bold text-foam-50 md:text-3xl">{activeProject?.title}</h3><p className="mt-2 max-w-xl text-sm text-foam-300">{activeProject?.description}</p></div>
-              <div className="flex shrink-0 gap-2"><button type="button" onClick={() => moveGallery(-1)} aria-label="Project sebelumnya" className="rounded-full border border-foam-100/30 bg-abyss-950/70 p-2 text-foam-50"><ChevronLeft className="h-5 w-5" /></button><button type="button" onClick={() => moveGallery(1)} aria-label="Project berikutnya" className="rounded-full border border-foam-100/30 bg-abyss-950/70 p-2 text-foam-50"><ChevronRight className="h-5 w-5" /></button></div>
-            </div>
-          </div>
-          <div className="flex flex-wrap gap-2 p-4">{filtered.map((project, index) => <button key={project.id} type="button" onClick={() => { setGalleryIndex(index); setSelected(project); }} className={cn("rounded-md px-3 py-1.5 text-xs", index === galleryIndex ? "bg-coral-500 font-semibold text-abyss-950" : "bg-abyss-800 text-foam-300")}>{project.title}</button>)}</div>
-          {activeProject && <button type="button" onClick={() => setSelected(activeProject)} className="mx-4 mb-5 rounded-lg bg-coral-500 px-4 py-2 text-sm font-semibold text-abyss-950">Buka Detail</button>}
+      ) : view === "grid" ? (
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((p) => (
+            <ProjectCard
+              key={p.id}
+              project={p}
+              onSelect={() => setSelected(p)}
+            />
+          ))}
         </div>
       ) : (
-        <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((p) => (
-            <button
-              key={p.id}
-              onClick={() => setSelected(p)}
-              className="text-left"
-            >
-              <ProjectCard project={p} />
-            </button>
-          ))}
+        /* Showcase View */
+        <div className="mt-6 overflow-hidden rounded-2xl border border-abyss-800/80 bg-abyss-900/60">
+          <div className="relative aspect-[16/9] min-h-72 bg-abyss-950">
+            {activeProject && (
+              <Image
+                src={activeProject.thumbnail}
+                alt={activeProject.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 900px"
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-abyss-950 via-transparent to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-7">
+              <div>
+                <p className="eyebrow">{activeProject?.category} &middot; {activeProject?.date}</p>
+                <h3 className="mt-2 text-2xl font-bold text-foam-50 md:text-3xl">
+                  {activeProject?.title}
+                </h3>
+                <p className="mt-2 max-w-xl text-xs sm:text-sm text-foam-300 line-clamp-2">
+                  {activeProject?.description}
+                </p>
+              </div>
+              <div className="flex shrink-0 gap-2">
+                <button
+                  type="button"
+                  onClick={() => moveGallery(-1)}
+                  aria-label="Proyek sebelumnya"
+                  className="rounded-full border border-foam-100/20 bg-abyss-950/80 p-2 text-foam-50 hover:bg-abyss-800"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => moveGallery(1)}
+                  aria-label="Proyek berikutnya"
+                  className="rounded-full border border-foam-100/20 bg-abyss-950/80 p-2 text-foam-50 hover:bg-abyss-800"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2 p-4 border-t border-abyss-800/80 bg-abyss-950/40">
+            {filtered.map((project, index) => (
+              <button
+                key={project.id}
+                type="button"
+                onClick={() => { setGalleryIndex(index); }}
+                className={cn(
+                  "rounded-lg px-3 py-1.5 text-xs font-medium transition-all",
+                  index === galleryIndex
+                    ? "bg-sky-500 font-bold text-abyss-950 shadow-sm"
+                    : "bg-abyss-800/60 text-foam-300 hover:bg-abyss-700/60 hover:text-white"
+                )}
+              >
+                {project.title.split("—")[0].trim()}
+              </button>
+            ))}
+          </div>
+          {activeProject && (
+            <div className="p-4 pt-0">
+              <button
+                type="button"
+                onClick={() => setSelected(activeProject)}
+                className="inline-flex items-center gap-1.5 rounded-xl bg-sky-500 px-4 py-2 text-xs font-bold text-abyss-950 hover:bg-sky-400"
+              >
+                Buka Quick Preview <ArrowUpRight className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          )}
         </div>
       )}
 

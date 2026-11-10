@@ -3,37 +3,37 @@ import type { Service } from "@/lib/types";
 export const services: Service[] = [
   {
     id: "web-dev",
-    title: "Web Development",
+    title: "Full-Stack Web Development",
     description:
-      "Membangun website responsif dan modern dengan HTML, CSS, JavaScript, dan framework seperti Next.js.",
+      "Merancang dan membangun aplikasi web komprehensif dari sisi antarmuka hingga server menggunakan ekosistem Next.js, React, PHP, dan Tailwind CSS.",
     icon: "code",
   },
   {
-    id: "ui-impl",
-    title: "UI Implementation",
-    description:
-      "Menerjemahkan desain Figma menjadi kode rapi, aksesibel, dan pixel-perfect.",
-    icon: "layout",
-  },
-  {
     id: "backend",
-    title: "Backend & API",
+    title: "Backend & RESTful API",
     description:
-      "Membuat REST API, autentikasi, dan relasi database dengan Laravel, Node.js, dan PostgreSQL.",
+      "Mengembangkan arsitektur backend yang aman dan efisien, manajemen otentikasi sesi & token, serta integrasi API berkinerja tinggi.",
     icon: "server",
   },
   {
-    id: "data",
-    title: "Data Analysis",
+    id: "database",
+    title: "Database Architecture",
     description:
-      "Mengolah dan memvisualisasikan data dengan Python dan SQL untuk insight yang berguna.",
+      "Perancangan skema relasional terstandar, normalisasi data, query optimization, dan integrasi ORM (MySQL, PostgreSQL, Prisma).",
     icon: "chart",
   },
   {
-    id: "content",
-    title: "Content & Education",
+    id: "ui-impl",
+    title: "UI/UX Engineering",
     description:
-      "Membuat konten edukasi teknologi dan mengedit video untuk platform digital.",
+      "Menerjemahkan wireframe dan desain Figma menjadi antarmuka web yang interaktif, aksesibel, responsif lintas perangkat, dan pixel-perfect.",
+    icon: "layout",
+  },
+  {
+    id: "data-analytics",
+    title: "Data Analytics & Automasi",
+    description:
+      "Pengolahan data operasional, penyusunan dashboard visual analitik, dan otomatisasi proses bisnis menggunakan SQL dan Python.",
     icon: "video",
   },
 ];

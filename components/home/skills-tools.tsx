@@ -2,111 +2,157 @@ import { profile } from "@/data/profile";
 import { tools } from "@/data/tools";
 import SectionTitle from "@/components/section-title";
 import { cn } from "@/lib/utils";
+import { Code2, Layers, Database, Wrench, Users } from "lucide-react";
 
-function SkillBar({
+function SkillItem({
   name,
+  level,
   progress,
-  soft = false,
 }: {
   name: string;
-  progress: number;
-  soft?: boolean;
+  level?: string;
+  progress?: number;
 }) {
   return (
-    <div>
-      <div className="flex items-center justify-between text-xs">
-        <span className="font-medium text-foam-100">{name}</span>
-        <span className="text-foam-500">{progress}%</span>
+    <div className="rounded-xl border border-abyss-800/80 bg-abyss-950/60 p-3.5 backdrop-blur-sm transition-all hover:border-sky-500/30">
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-xs font-semibold text-foam-100">{name}</span>
+        {level && (
+          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-abyss-800 text-sky-300 border border-abyss-700/60">
+            {level}
+          </span>
+        )}
       </div>
-      <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-abyss-900 ring-1 ring-inset ring-abyss-700/40">
-        <div
-          className={cn(
-            "h-full rounded-full",
-            soft
-              ? "bg-gradient-to-r from-emerald-500/70 to-emerald-400"
-              : "bg-gradient-to-r from-abyss-500 to-abyss-300"
-          )}
-          style={{ width: `${progress}%` }}
-        />
-      </div>
+      {progress !== undefined && (
+        <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-abyss-900 ring-1 ring-inset ring-abyss-800">
+          <div
+            className="h-full rounded-full bg-gradient-to-r from-sky-500 to-blue-500 transition-all duration-700"
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      )}
     </div>
   );
 }
 
 export default function SkillsTools() {
-  const technical = profile.skills.filter(
-    (s) => s.category !== "Soft Skill" && s.progress
-  );
-  const soft = profile.skills.filter((s) => s.category === "Soft Skill");
+  const languages = profile.skills.filter((s) => s.category === "Language");
+  const frameworks = profile.skills.filter((s) => s.category === "Framework");
+  const databases = profile.skills.filter((s) => s.category === "Database");
+  const softSkills = profile.skills.filter((s) => s.category === "Soft Skill");
 
   return (
-    <section className="relative overflow-hidden border-y border-abyss-700/20 bg-abyss-900/35 py-20 md:py-24">
-      {/* depth glow */}
+    <section className="relative overflow-hidden border-y border-abyss-800/80 bg-abyss-900/30 py-16 md:py-24">
+      {/* Background radial glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-64 w-[40rem] -translate-x-1/2 rounded-full bg-abyss-500/10 blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-0 h-96 w-[48rem] -translate-x-1/2 rounded-full bg-sky-500/5 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl px-4">
         <SectionTitle
-          title="Skills & Tools"
-          subtitle="Kemampuan teknis, soft skill, dan tools yang aku pakai."
+          title="Keahlian Teknis & Perangkat Kerja"
+          subtitle="Teknologi, bahasa pemrograman, basis data, dan perangkat rekayasa perangkat lunak yang saya kuasai secara mendalam."
         />
 
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-          {/* Skills */}
-          <div>
-            <h3 className="eyebrow">
-              My Skills
-            </h3>
-            <div className="mt-4 space-y-3.5">
-              {technical.map((s) => (
-                <SkillBar
-                  key={s.name}
-                  name={s.name}
-                  progress={s.progress!}
-                />
+        {/* 4 Categorized Skill Columns */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* Languages */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 border-b border-abyss-800/80 pb-2.5">
+              <Code2 className="h-4 w-4 text-sky-400" />
+              <h3 className="text-xs font-bold uppercase tracking-wider text-sky-400">
+                Bahasa Pemrograman
+              </h3>
+            </div>
+            <div className="space-y-2.5">
+              {languages.map((s) => (
+                <SkillItem key={s.name} name={s.name} level={s.level} progress={s.progress} />
               ))}
             </div>
-
-            {soft.length > 0 && (
-              <>
-                <h3 className="eyebrow mt-10 text-emerald-300">
-                  Soft Skills
-                </h3>
-                <div className="mt-4 space-y-3.5">
-                  {soft.map((s) => (
-                    <SkillBar
-                      key={s.name}
-                      name={s.name}
-                      progress={s.progress!}
-                      soft
-                    />
-                  ))}
-                </div>
-              </>
-            )}
           </div>
 
-          {/* Tools */}
-          <div>
-            <h3 className="eyebrow">
-              Tools & Technologies
-            </h3>
-            <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
+          {/* Frameworks & Web */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 border-b border-abyss-800/80 pb-2.5">
+              <Layers className="h-4 w-4 text-sky-400" />
+              <h3 className="text-xs font-bold uppercase tracking-wider text-sky-400">
+                Framework &amp; Frontend
+              </h3>
+            </div>
+            <div className="space-y-2.5">
+              {frameworks.map((s) => (
+                <SkillItem key={s.name} name={s.name} level={s.level} progress={s.progress} />
+              ))}
+            </div>
+          </div>
+
+          {/* Databases & Architecture */}
+          <div className="space-y-3 md:col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2 border-b border-abyss-800/80 pb-2.5">
+              <Database className="h-4 w-4 text-sky-400" />
+              <h3 className="text-xs font-bold uppercase tracking-wider text-sky-400">
+                Basis Data &amp; Arsitektur
+              </h3>
+            </div>
+            <div className="space-y-2.5">
+              {databases.map((s) => (
+                <SkillItem key={s.name} name={s.name} level={s.level} progress={s.progress} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Soft Skills & Work Tools Section */}
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          {/* Soft Skills */}
+          <div className="rounded-2xl border border-abyss-800/80 bg-abyss-900/60 p-6 backdrop-blur-sm">
+            <div className="flex items-center gap-2 border-b border-abyss-800/80 pb-3 mb-4">
+              <Users className="h-4 w-4 text-emerald-400" />
+              <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+                Kompetensi Profesional &amp; Soft Skills
+              </h3>
+            </div>
+            <div className="grid gap-2.5 sm:grid-cols-2">
+              {softSkills.map((s) => (
+                <div
+                  key={s.name}
+                  className="flex items-center justify-between rounded-xl bg-abyss-950/60 p-3 border border-abyss-800/60"
+                >
+                  <span className="text-xs font-medium text-foam-100">{s.name}</span>
+                  <span className="text-[11px] font-bold text-emerald-400">
+                    {s.progress}%
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Tools & Workflow */}
+          <div className="rounded-2xl border border-abyss-800/80 bg-abyss-900/60 p-6 backdrop-blur-sm">
+            <div className="flex items-center gap-2 border-b border-abyss-800/80 pb-3 mb-4">
+              <Wrench className="h-4 w-4 text-sky-400" />
+              <h3 className="text-xs font-bold uppercase tracking-wider text-sky-400">
+                Perangkat &amp; Lingkungan Kerja
+              </h3>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {tools.map((t) => (
                 <a
                   key={t.name}
                   href={t.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex flex-col items-center gap-2 rounded-lg border border-abyss-700/40 bg-abyss-900/60 p-3 backdrop-blur-sm transition-all hover:border-coral-400/60 hover:bg-abyss-800/70"
+                  className="group flex flex-col items-center justify-center rounded-xl border border-abyss-800/80 bg-abyss-950/60 p-3 text-center transition-all hover:border-sky-500/40 hover:bg-abyss-800/50"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-abyss-700 to-abyss-800 text-sm font-bold uppercase text-abyss-300 ring-1 ring-inset ring-abyss-500/20 transition-transform group-hover:scale-110">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-abyss-800 text-xs font-black uppercase text-sky-300 ring-1 ring-inset ring-abyss-700/60 transition-transform group-hover:scale-105">
                     {t.name.slice(0, 2)}
                   </div>
-                  <span className="text-center text-[11px] font-medium leading-tight text-foam-100">
+                  <span className="mt-2 text-xs font-bold text-foam-100">
                     {t.name}
+                  </span>
+                  <span className="text-[10px] text-foam-500">
+                    {t.category}
                   </span>
                 </a>
               ))}

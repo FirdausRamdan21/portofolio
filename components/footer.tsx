@@ -1,4 +1,5 @@
-import { Mail } from "lucide-react";
+import Link from "next/link";
+import { Mail, ArrowUpRight } from "lucide-react";
 import { profile } from "@/data/profile";
 import {
   GithubIcon,
@@ -16,42 +17,31 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="relative mt-24 overflow-hidden">
-      {/* Wave divider ke base */}
-      <div className="absolute inset-x-0 -top-px">
-        <svg
-          viewBox="0 0 1440 80"
-          preserveAspectRatio="none"
-          className="h-12 w-full text-abyss-950"
-          aria-hidden
-        >
-          <path
-            fill="currentColor"
-            d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,0 L0,0 Z"
-          />
-        </svg>
-      </div>
-
-      {/* Deep gradient body */}
-      <div className="relative bg-gradient-to-b from-abyss-900 via-abyss-950 to-black">
-        {/* Glow */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -top-32 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-abyss-500/15 blur-3xl"
-        />
-
-        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 px-4 pt-20 pb-10 sm:flex-row sm:justify-between">
-          <div className="text-center sm:text-left">
-            <p className="font-semibold tracking-wide text-foam-50">{profile.name}<span className="text-coral-400">.</span></p>
-            <p className="text-sm text-foam-300">{profile.role}</p>
+    <footer className="relative mt-20 border-t border-abyss-800/80 bg-abyss-950/80">
+      <div className="mx-auto max-w-6xl px-4 py-12">
+        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-500 text-xs font-black text-abyss-950">
+                FR
+              </span>
+              <p className="font-bold tracking-tight text-foam-50 text-base">
+                {profile.name}
+              </p>
+            </div>
+            <p className="mt-1 text-xs text-foam-400 max-w-md">
+              {profile.role} &middot; Rekayasa Perangkat Lunak SMKN 8 Jakarta. Berfokus pada pengembangan sistem web fungsional dan arsitektur basis data.
+            </p>
           </div>
 
-          <div className="flex gap-3">
+          {/* Social Links */}
+          <div className="flex flex-wrap items-center gap-3">
             {profile.contacts.email && (
               <a
                 href={`mailto:${profile.contacts.email}`}
                 aria-label="Email"
-                className="rounded-full border border-abyss-700/40 bg-abyss-900/50 p-2 text-foam-300 backdrop-blur-sm transition-all hover:border-abyss-500/60 hover:bg-abyss-800/60 hover:text-abyss-300"
+                className="rounded-xl border border-abyss-800 bg-abyss-900/60 p-2.5 text-foam-300 transition-all hover:border-sky-500/40 hover:bg-abyss-800 hover:text-sky-300"
+                title="Kirim Email"
               >
                 <Mail className="h-4 w-4" />
               </a>
@@ -65,7 +55,8 @@ export default function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    className="rounded-full border border-abyss-700/40 bg-abyss-900/50 p-2 text-foam-300 backdrop-blur-sm transition-all hover:border-abyss-500/60 hover:bg-abyss-800/60 hover:text-abyss-300"
+                    className="rounded-xl border border-abyss-800 bg-abyss-900/60 p-2.5 text-foam-300 transition-all hover:border-sky-500/40 hover:bg-abyss-800 hover:text-sky-300"
+                    title={label}
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -74,9 +65,22 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="relative border-t border-abyss-700/20 py-4 text-center text-xs text-foam-500">
-          © {new Date().getFullYear()} {profile.name}. Built with Next.js &
-          Tailwind CSS.
+        {/* Bottom row */}
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-abyss-800/80 pt-6 text-xs text-foam-500 sm:flex-row">
+          <p>
+            &copy; {new Date().getFullYear()} {profile.name}. Portofolio Rekayasa Perangkat Lunak.
+          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/about" className="hover:text-sky-400 transition-colors">
+              Curriculum Vitae
+            </Link>
+            <Link href="/inventory" className="hover:text-sky-400 transition-colors">
+              Proyek
+            </Link>
+            <Link href="/contact" className="hover:text-sky-400 transition-colors">
+              Kontak
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

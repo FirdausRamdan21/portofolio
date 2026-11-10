@@ -8,19 +8,19 @@ import SectionTitle from "@/components/section-title";
 import InventoryTabs from "@/components/inventory/inventory-tabs";
 
 export const metadata = buildMetadata({
-  title: "Inventory — Firdaus Ramdan",
-  description: "Kumpulan project, aktivitas, dan tools.",
+  title: "Portofolio Proyek & Arsip Rekayasa — Firdaus Ramdan",
+  description: "Eksplorasi proyek aplikasi web Full-Stack, sistem enterprise, aktivitas kepengurusan, dan perangkat rekayasa perangkat lunak.",
   path: "/inventory",
 });
 
 export default function InventoryPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-12">
+    <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
       <SectionTitle
-        title="Inventory"
-        subtitle="Pusat arsip untuk project, aktivitas, pembelajaran, dan tools. Gunakan tab untuk menelusuri setiap catatan secara terstruktur."
+        title="Portofolio Proyek &amp; Karya"
+        subtitle="Eksplorasi proyek aplikasi web, arsitektur basis data, aktivitas organisasi, dan perangkat rekayasa perangkat lunak yang telah saya bangun."
       />
-      <Suspense fallback={<p className="text-sm text-gray-500">Loading…</p>}>
+      <Suspense fallback={<p className="text-sm text-foam-400">Memuat data proyek…</p>}>
         <InventoryTabs
           projects={projects}
           activities={activities}

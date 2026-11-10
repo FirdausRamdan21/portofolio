@@ -1,77 +1,76 @@
 @import "tailwindcss";
 
 @theme {
-  --color-abyss-950: #091335;
-  --color-abyss-900: #0e1c48;
-  --color-abyss-850: #112459;
-  --color-abyss-800: #142e72;
-  --color-abyss-700: #1f4ba5;
-  --color-abyss-600: #2d6fce;
-  --color-abyss-500: #3c8cea;
-  --color-abyss-400: #54abfb;
-  --color-abyss-300: #74ccfd;
-  --color-coral-400: #ff9c78;
-  --color-coral-500: #f4775b;
-  --color-foam-50: #f2f6fc;
-  --color-foam-100: #e6edf9;
-  --color-foam-300: #9fb3d5;
-  --color-foam-500: #647aa0;
+  --color-abyss-950: #090d16;
+  --color-abyss-900: #0f172a;
+  --color-abyss-850: #131d33;
+  --color-abyss-800: #1e293b;
+  --color-abyss-700: #334155;
+  --color-abyss-600: #0284c7;
+  --color-abyss-500: #0ea5e9;
+  --color-abyss-400: #38bdf8;
+  --color-abyss-300: #7dd3fc;
+  --color-coral-400: #38bdf8;
+  --color-coral-500: #0284c7;
+  --color-foam-50: #f8fafc;
+  --color-foam-100: #f1f5f9;
+  --color-foam-300: #94a3b8;
+  --color-foam-500: #64748b;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-5px); }
 }
 
-@keyframes bubble {
-  0% { transform: translateY(0) scale(0.6); opacity: 0; }
-  10% { opacity: 0.55; }
-  90% { opacity: 0.15; }
-  100% { transform: translateY(-110vh) scale(1.15); opacity: 0; }
-}
-
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0.35; }
-  50% { opacity: 0.55; }
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
 }
 
 /* Base */
 html {
   color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
-  background:
-    radial-gradient(circle at 86% 8%, rgba(244, 119, 91, 0.08), transparent 25rem),
-    var(--color-abyss-950);
+  background-color: var(--color-abyss-950);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(99, 102, 241, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(14, 165, 233, 0.04) 0%, transparent 50%);
   color: var(--color-foam-100);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  min-height: 100vh;
 }
 
+/* Subtle tech grid background */
 body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   content: "";
-  opacity: 0.32;
-  background-image: linear-gradient(rgba(116, 204, 253, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(116, 204, 253, 0.035) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(to bottom, black, transparent 70%);
+  opacity: 0.15;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 40%, transparent 100%);
 }
 
 /* Selection */
 ::selection {
-  background-color: rgba(60, 140, 234, 0.35);
+  background-color: rgba(14, 165, 233, 0.35);
   color: var(--color-foam-50);
 }
 
 /* Scrollbar halus */
-::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: var(--color-abyss-950); }
 ::-webkit-scrollbar-thumb {
   background: var(--color-abyss-800);
@@ -82,62 +81,45 @@ body::before {
 
 /* Focus ring konsisten */
 :focus-visible {
-  outline: 2px solid var(--color-abyss-300);
+  outline: 2px solid var(--color-abyss-400);
   outline-offset: 2px;
   border-radius: 6px;
 }
 
-/* ===== Deep Sea Hero ===== */
+/* ===== Professional Hero ===== */
 .sea-hero {
-  background:
-    radial-gradient(ellipse 55% 60% at 12% 24%, rgba(244, 119, 91, 0.13), transparent 65%),
-    radial-gradient(ellipse 70% 55% at 70% 5%, rgba(60, 140, 234, 0.24), transparent 65%),
-    linear-gradient(145deg, #0e1c48 0%, #091335 72%);
+  position: relative;
+  background: 
+    radial-gradient(ellipse 65% 55% at 50% -10%, rgba(14, 165, 233, 0.18), transparent 75%),
+    radial-gradient(ellipse 40% 35% at 85% 25%, rgba(99, 102, 241, 0.12), transparent 70%),
+    linear-gradient(180deg, #0c1427 0%, var(--color-abyss-950) 100%);
 }
 
-/* Wave divider glow */
-.sea-glow {
-  box-shadow: 0 0 80px -20px rgba(60, 140, 234, 0.35);
+/* Card Glow & Professional Borders */
+.card-glow {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card-glow:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 16px 36px -16px rgba(14, 165, 233, 0.25);
+  transform: translateY(-2px);
 }
 
-/* Text gradient (accent pada heading besar) */
+/* Formal Eyebrow Badge */
+.eyebrow {
+  color: var(--color-abyss-400);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Text Gradient */
 .text-gradient-sea {
-  background: linear-gradient(135deg, #74ccfd 0%, #3c8cea 50%, #2d6fce 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #7dd3fc 45%, #0ea5e9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* Bubbles */
-.bubble {
-  position: absolute;
-  border-radius: 9999px;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(116, 204, 253, 0.4),
-    rgba(60, 140, 234, 0.15) 55%,
-    rgba(60, 140, 234, 0) 72%
-  );
-  border: 1px solid rgba(116, 204, 253, 0.15);
-  pointer-events: none;
-  will-change: transform, opacity;
-}
-
-/* Subtle card glow on hover */
-.card-glow {
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-}
-.card-glow:hover {
-  border-color: rgba(116, 204, 253, 0.28);
-  box-shadow: 0 20px 50px -25px rgba(60, 140, 234, 0.5);
-}
-
-.eyebrow {
-  color: var(--color-coral-400);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -218,7 +200,6 @@ body::before {
     display: none !important;
   }
 
-  /* Keep the ATS document on one page where the browser supports it. */
   .cv-section,
   .break-inside-avoid {
     break-inside: avoid;

@@ -2,39 +2,53 @@ import type { Profile } from "@/lib/types";
 
 export const profile: Profile = {
   name: "Firdaus Ramdan",
-  alias: "MR_North",
-  role: "Software Engineering Student & Aspiring Data Analyst",
-  tagline: "Rekayasa Perangkat Lunak · SMKN 8 Jakarta · Aktif Berkarya",
+  alias: "Firdaus",
+  role: "Full-Stack Web Developer & Software Engineering Student",
+  tagline: "Rekayasa Perangkat Lunak · SMKN 8 Jakarta · Full-Stack & Data Specialist",
   location: "Jakarta, Indonesia",
   photo: "/images/profile/firdaus.jpg",
   about:
-    "Saya Firdaus Ramdan, siswa Rekayasa Perangkat Lunak di SMKN 8 Jakarta dengan fokus pada Software Engineering dan Data Analysis. Saya membangun website yang rapi, responsif, dan fungsional, serta mengembangkan kemampuan melalui project nyata, organisasi, dan pembelajaran mandiri.",
+    "Saya Firdaus Ramdan, pengembang perangkat lunak (Full-Stack Developer) dan siswa Rekayasa Perangkat Lunak di SMKN 8 Jakarta dengan keahlian dalam perancangan sistem web modern, arsitektur basis data, dan analisis data. Berpengalaman membangun aplikasi fungsional skala nyata—mulai dari sistem manajemen armada perkeretaapian berskala kompleks, platform kasir POS & inventaris, hingga portal web organisasi—dengan komitmen tinggi terhadap kualitas kode, keamanan, dan pengalaman pengguna.",
   skills: [
-    // Technical
-    { name: "HTML & CSS", category: "Language", level: "Advanced", progress: 90 },
-    { name: "JavaScript", category: "Language", level: "Intermediate", progress: 80 },
-    { name: "TypeScript", category: "Language", level: "Beginner", progress: 60 },
-    { name: "PHP", category: "Language", level: "Intermediate", progress: 75 },
-    { name: "Python", category: "Language", level: "Beginner", progress: 55 },
-    { name: "Next.js", category: "Framework", level: "Beginner", progress: 65 },
-    { name: "React", category: "Framework", level: "Beginner", progress: 60 },
-    { name: "Laravel", category: "Framework", level: "Intermediate", progress: 78 },
-    { name: "Node.js", category: "Framework", level: "Beginner", progress: 55 },
-    { name: "MySQL", category: "Database", level: "Intermediate", progress: 75 },
-    { name: "PostgreSQL", category: "Database", level: "Beginner", progress: 55 },
-    { name: "Git & GitHub", category: "Tool", level: "Intermediate", progress: 80 },
-    { name: "VS Code", category: "Tool", level: "Advanced", progress: 90 },
-    { name: "Figma", category: "Tool", level: "Intermediate", progress: 70 },
+    // Languages
+    { name: "PHP", category: "Language", level: "Advanced", progress: 88 },
+    { name: "JavaScript", category: "Language", level: "Advanced", progress: 85 },
+    { name: "TypeScript", category: "Language", level: "Intermediate", progress: 78 },
+    { name: "SQL (MySQL & PostgreSQL)", category: "Language", level: "Advanced", progress: 85 },
+    { name: "HTML5 & CSS3", category: "Language", level: "Advanced", progress: 92 },
+    { name: "Python", category: "Language", level: "Intermediate", progress: 65 },
 
-    // Soft Skills
-    { name: "Team Work", category: "Soft Skill", progress: 90 },
-    { name: "Communication", category: "Soft Skill", progress: 85 },
-    { name: "Critical Thinking", category: "Soft Skill", progress: 85 },
-    { name: "Responsibility", category: "Soft Skill", progress: 92 },
-    { name: "Problem Solving", category: "Soft Skill", progress: 88 },
+    // Frameworks & Libraries
+    { name: "Next.js", category: "Framework", level: "Advanced", progress: 84 },
+    { name: "React", category: "Framework", level: "Advanced", progress: 82 },
+    { name: "Tailwind CSS", category: "Framework", level: "Advanced", progress: 90 },
+    { name: "Laravel", category: "Framework", level: "Intermediate", progress: 75 },
+    { name: "Node.js & Express", category: "Framework", level: "Intermediate", progress: 72 },
+    { name: "Bootstrap 5", category: "Framework", level: "Advanced", progress: 88 },
+
+    // Databases & ORM
+    { name: "MySQL / MariaDB", category: "Database", level: "Advanced", progress: 88 },
+    { name: "PostgreSQL", category: "Database", level: "Intermediate", progress: 78 },
+    { name: "Prisma ORM", category: "Database", level: "Intermediate", progress: 80 },
+    { name: "Database Normalization & Indexing", category: "Database", level: "Advanced", progress: 82 },
+
+    // Tools & DevOps
+    { name: "Git & GitHub", category: "Tool", level: "Advanced", progress: 86 },
+    { name: "RESTful API Design", category: "Tool", level: "Advanced", progress: 85 },
+    { name: "VS Code & Laragon Environment", category: "Tool", level: "Advanced", progress: 92 },
+    { name: "Figma (UI/UX Implementation)", category: "Tool", level: "Intermediate", progress: 78 },
+    { name: "Postman API Testing", category: "Tool", level: "Intermediate", progress: 80 },
+    { name: "Vercel Deployment", category: "Tool", level: "Advanced", progress: 85 },
+
+    // Soft Skills / Professional
+    { name: "Problem Solving & Algoritma", category: "Soft Skill", progress: 90 },
+    { name: "Kolaborasi Tim & Kepemimpinan", category: "Soft Skill", progress: 88 },
+    { name: "Komunikasi Teknis & Dokumentasi", category: "Soft Skill", progress: 86 },
+    { name: "Manajemen Waktu & Tanggung Jawab Proyek", category: "Soft Skill", progress: 92 },
+    { name: "Berpikir Kritis & Analisis Kebutuhan", category: "Soft Skill", progress: 88 },
   ],
   contacts: {
-    email: "",
+    email: "firdausramdan.dev@gmail.com",
     github: "https://github.com/FirdausRamdan21",
     linkedin: "https://www.linkedin.com/in/firdaus-ramdan/",
     tiktok: "https://www.tiktok.com/@mr_north9?is_from_webapp=1&sender_device=pc",
@@ -43,10 +57,10 @@ export const profile: Profile = {
   cvUrl: "/documents/CV-Firdaus-Ramdan.pdf",
 
   summary:
-  "Siswa Rekayasa Perangkat Lunak di SMKN 8 Jakarta dengan fokus pada web development dan data analysis. Berpengalaman membangun website responsif, REST API, dan aplikasi CRUD dengan Next.js, Laravel, dan PostgreSQL. Aktif dalam organisasi dan pembelajaran mandiri, dengan kemampuan kerja sama serta problem solving yang terus dikembangkan.",
+    "Siswa Rekayasa Perangkat Lunak di SMKN 8 Jakarta dengan rekam jejak terbukti dalam membangun sistem web Full-Stack, perancangan basis data relasional terstruktur, dan REST API. Menguasai ekosistem Next.js, TypeScript, PHP/Laravel, dan Tailwind CSS, serta aktif berorganisasi dengan kemampuan pemecahan masalah dan kerja sama tim yang solid. Siap berkontribusi sebagai pengembang perangkat lunak magang atau junior web developer.",
 
-languages: [
-  { name: "Bahasa Indonesia", level: "Native" },
-  { name: "English", level: "Intermediate" },
-],
+  languages: [
+    { name: "Bahasa Indonesia", level: "Native" },
+    { name: "English", level: "Intermediate" },
+  ],
 };
