@@ -2,6 +2,70 @@ import type { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
+    id: "bedahkarya",
+    slug: "bedahkarya",
+    title: "BedahKarya — Platform Komunitas Kreatif & Bedah Karya",
+    description:
+      "Platform jejaring sosial dan komunitas kreatif berbasis web yang terinspirasi dari Lahelu, Instagram, dan Discord. Dirancang untuk berbagi karya visual maupun tulisan, membedah desain dan kode secara konstruktif, berdiskusi lewat komentar & DM, serta mengikuti event komunitas dalam ekosistem moderasi yang aman.",
+    thumbnail: "/images/projects/bedahkarya/eksplorasi.jpg",
+    images: [
+      "/images/projects/bedahkarya/eksplorasi.jpg",
+      "/images/projects/bedahkarya/event.jpg",
+    ],
+    documentation: [
+      "Menggabungkan konsep feed kategori komunitas & meme (Lahelu), galeri eksplorasi visual & DM sosial (Instagram), serta sistem badge spesial, event, dan moderasi peran (Discord).",
+      "Perancangan skema basis data MySQL kompleks dengan 19 model relasional dan 8 enum menggunakan Prisma ORM v6.",
+      "Fitur Smart Search & Eksplorasi mendukung pencarian teks bebas, #tag, @username, kategori (Karya, Meme, Teknis, Pendidikan, Sosial), dan subkategori.",
+      "Editor unggahan lengkap dengan mode Gambar (Portrait 4:5 & Landscape 16:9 dengan kanvas crop/pan/zoom) maupun kartu Teks, draf tersimpan, serta Mode Fokus (sembunyikan jumlah suka).",
+      "Sistem komunikasi Pesan Langsung (DM), Pusat Notifikasi terkategori, serta Panel Admin & Moderator (manajemen pengguna, penangguhan, uji banding, badge spesial, dan event komunitas)."
+    ],
+    report: {
+      title: "Pratinjau Fitur Utama BedahKarya",
+      sections: [
+        {
+          module: "1. Eksplorasi & Kurasi Konten",
+          title: "Halaman Eksplorasi & Smart Search",
+          image: "/images/projects/bedahkarya/eksplorasi.jpg",
+          points: [
+            "Pencarian terpadu untuk judul, deskripsi, alat, #tag, maupun @username kreator.",
+            "Filter kategori konten dinamis: Semua Kategori, Konten Karya, Konten Meme, Konten Teknis, Konten Pendidikan, dan Konten Sosial.",
+            "Menampilkan kartu karya visual (ilustrasi, UI/UX, tipografi, identitas visual) dan catatan editorial berbasis teks dalam grid responsif.",
+          ],
+        },
+        {
+          module: "2. Komunitas & Gamifikasi",
+          title: "Event Komunitas BedahKarya",
+          image: "/images/projects/bedahkarya/event.jpg",
+          points: [
+            "Menampilkan daftar event kurasi dan tantangan komunitas yang sedang berlangsung (seperti Event Inspirasi #inspirasi dan Event Pembukaan Baru #pembukaanbaru).",
+            "Mendukung partisipasi langsung melalui tombol Ikuti Event dan Unggah Konten Event.",
+            "Dikelola secara dinamis melalui Panel Spesial oleh Admin dan Moderator bersama sistem Badge Spesial komunitas.",
+          ],
+        },
+      ],
+    },
+    tech: [
+      "Next.js 15",
+      "React 19",
+      "MySQL",
+      "Prisma ORM",
+      "Tailwind CSS v4",
+      "JWT (jose)",
+      "RBAC",
+    ],
+    learned: [
+      "Merancang arsitektur platform sosial full-stack dengan 19 model relasional, algoritma feed, DM, dan notifikasi terkategori.",
+      "Mengimplementasikan sistem moderasi multi-peran (Admin, Moderator, User, Guest) lengkap dengan mekanisme laporan dan uji banding.",
+      "Membangun autentikasi aman berbasis JWT (jose) dan bcryptjs serta proteksi media unggahan.",
+    ],
+    date: "2026-11",
+    category: "Web",
+    github: "https://github.com/FirdausRamdan21/bedahkarya",
+    live: "",
+    featured: true,
+    pinned: true,
+  },
+  {
     id: "gudang-kereta",
     slug: "gudang-kereta",
     title: "Gudang Kereta — Sistem Manajemen Armada & Operasional Perkeretaapian",
