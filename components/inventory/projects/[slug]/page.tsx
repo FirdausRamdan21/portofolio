@@ -147,15 +147,55 @@ export default async function ProjectDetailPage({
         </div>
       )}
 
-      <section className="mt-10 rounded-2xl border border-abyss-800/80 bg-abyss-900/50 p-6">
-        <h2 className="text-lg font-semibold text-foam-50">
-          Ringkasan Arsitektur & Fitur Utama
-        </h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foam-300 marker:text-sky-400">
-          {project.documentation.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+      <section className="mt-10 rounded-2xl border border-abyss-800/80 bg-abyss-900/50 p-6 space-y-6">
+        {project.overview && (
+          <div>
+            <h2 className="text-lg font-semibold text-foam-50">
+              Tentang Proyek &amp; Latar Belakang
+            </h2>
+            <p className="mt-2.5 text-sm leading-relaxed text-foam-300">
+              {project.overview}
+            </p>
+          </div>
+        )}
+
+        {project.highlights && project.highlights.length > 0 && (
+          <div className={project.overview ? "border-t border-abyss-800/70 pt-6" : ""}>
+            <h2 className="text-lg font-semibold text-foam-50">
+              Fitur Utama &amp; Kapabilitas Sistem
+            </h2>
+            <div className="mt-4 grid gap-3.5 sm:grid-cols-2">
+              {project.highlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-xl border border-abyss-800/80 bg-abyss-950/60 p-4"
+                >
+                  <h3 className="text-sm font-bold text-sky-300">{item.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-foam-300">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div
+          className={
+            project.overview || (project.highlights && project.highlights.length > 0)
+              ? "border-t border-abyss-800/70 pt-6"
+              : ""
+          }
+        >
+          <h2 className="text-lg font-semibold text-foam-50">
+            Ringkasan Arsitektur &amp; Detail Teknis
+          </h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-foam-300 marker:text-sky-400">
+            {project.documentation.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {project.report && (

@@ -56,11 +56,18 @@ export type ProjectReport = {
   sections: ProjectReportSection[];
 };
 
+export type ProjectHighlight = {
+  title: string;
+  description: string;
+};
+
 export type Project = {
   id: string;
   slug: string;
   title: string;
   description: string;
+  overview?: string;
+  highlights?: ProjectHighlight[];
   logo?: string;
   thumbnail: string;
   images?: string[];

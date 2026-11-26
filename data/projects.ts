@@ -2,11 +2,203 @@ import type { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
+    id: "bertemanyuk",
+    slug: "bertemanyuk",
+    title: "BertemanYuk — Aplikasi Komunitas & Komunikasi Jarak Jauh Real-Time",
+    description:
+      "Aplikasi komunitas komunikasi jarak jauh terinspirasi dari Discord untuk mencari teman baru, dilengkapi ruang obrolan real-time, panggilan suara WebRTC, dan ruang koleksi bertopik.",
+    overview:
+      "BertemanYuk adalah platform komunitas komunikasi jarak jauh berbasis web yang dibangun dengan tujuan mempertemukan pengguna lintas lokasi agar dapat menjalin pertemanan baru secara nyaman dan interaktif. Terinspirasi dari struktur server dan kanal Discord, aplikasi ini memadukan ruang obrolan teks real-time dengan filter pesan cerdas, panggilan suara peer-to-peer berbasis WebRTC lengkap dengan panel pesan pendamping, serta Ruang Koleksi untuk mengelompokkan topik diskusi berdasarkan sub-kategori minat.",
+    highlights: [
+      {
+        title: "Autentikasi & OAuth Terpadu",
+        description:
+          "Mendukung masuk menggunakan Email & Kata Sandi maupun login instan melalui akun Google dan GitHub, dilengkapi alur pendaftaran akun baru yang ringkas.",
+      },
+      {
+        title: "Ruang Obrolan Real-Time & Filter Cerdas",
+        description:
+          "Obrolan langsung (Live) dengan tab filter otomatis untuk memilah pesan berdasarkan Semua, Tautan, Potongan Kode, Saku Pesan, dan Solusi, serta pencarian pesan di dalam ruang.",
+      },
+      {
+        title: "Fitur Teks Interaktif & Polling",
+        description:
+          "Mendukung berbagi potongan kode, teks tersembunyi ||spoiler||, pembuatan /poll instan untuk komunitas, @mention anggota, dan status aktivitas pribadi seperti 'Dengerin musik'.",
+      },
+      {
+        title: "Ruang Suara WebRTC + Pesan Pendamping",
+        description:
+          "Panggilan suara peer-to-peer langsung di browser menggunakan WebRTC lengkap dengan pengaturan mikrofon/suara serta panel Pesan Pendamping untuk chat teks paralel saat mengobrol.",
+      },
+      {
+        title: "Ruang Koleksi & Sub-Kategori Topik",
+        description:
+          "Wadah pengelompokan ruang diskusi terstruktur berdasarkan topik dan sub-kategori minat (misalnya koleksi galery-coding dengan sub-kategori diskusi teks & media) agar komunitas tetap rapi.",
+      },
+      {
+        title: "Manajemen Server & Kehadiran Live",
+        description:
+          "Dilengkapi sistem multi-server, kode undangan server unik, pemisahan peran Pemilik & Pengguna, serta panel daftar anggota Online/Offline secara real-time.",
+      },
+    ],
+    thumbnail: "/images/projects/bertemanyuk/obrolan-utama.png",
+    images: [
+      "/images/projects/bertemanyuk/obrolan-utama.png",
+      "/images/projects/bertemanyuk/ruang-suara.png",
+      "/images/projects/bertemanyuk/ruang-koleksi.png",
+      "/images/projects/bertemanyuk/login.jpg",
+    ],
+    documentation: [
+      "Dibangun dengan arsitektur web modern Next.js (App Router) dengan antarmuka dark-mode responsif yang terinspirasi dari pengalaman pengguna Discord.",
+      "Implementasi komunikasi suara langsung antar pengguna secara peer-to-peer menggunakan WebRTC dengan kontrol perangkat audio dan panel Pesan Pendamping terintegrasi.",
+      "Sistem kanal modular yang memisahkan Ruang Obrolan (teks), Ruang Suara (WebRTC), dan Ruang Koleksi (pengelompokan topik & sub-kategori).",
+      "Klasifikasi pesan otomatis pada kanal obrolan (Tautan, Kode, Saku Pesan, Solusi) untuk memudahkan anggota menemukan kembali informasi penting.",
+      "Sistem kehadiran pengguna (Online/Offline), status aktivitas kustom, serta manajemen kode undangan server untuk membangun komunitas baru dengan cepat."
+    ],
+    report: {
+      title: "Pratinjau Antarmuka & Modul Fitur BertemanYuk",
+      sections: [
+        {
+          module: "1. Akses & Autentikasi",
+          title: "Portal Masuk & OAuth (Google / GitHub)",
+          image: "/images/projects/bertemanyuk/login.jpg",
+          points: [
+            "Halaman autentikasi bertema gelap yang bersih dengan form Email dan Kata Sandi (dilengkapi toggle visibilitas sandi).",
+            "Dukungan login cepat satu klik menggunakan Lanjutkan dengan Google dan Lanjutkan dengan GitHub.",
+            "Tautan pendaftaran akun baru bagi pengguna yang ingin langsung bergabung ke komunitas real-time.",
+          ],
+        },
+        {
+          module: "2. Komunikasi Teks Real-Time",
+          title: "Ruang Obrolan Utama (#obrolan-utama)",
+          image: "/images/projects/bertemanyuk/obrolan-utama.png",
+          points: [
+            "Navigasi tiga kolom khas komunitas modern: bilah server di kiri, daftar ruang & status pengguna, area obrolan utama di tengah, serta daftar anggota Online/Offline di kanan.",
+            "Dilengkapi filter pesan instan (Semua, Tautan, Kode, Saku Pesan, Solusi) dan kolom pencarian pesan di dalam ruang.",
+            "Mendukung fitur teks kaya: berbagi potongan kode, sisipan ||spoiler||, perintah /poll instan, @mention, serta status aktivitas kustom seperti 'Dengerin musik'.",
+          ],
+        },
+        {
+          module: "3. Panggilan Suara Peer-to-Peer",
+          title: "Ruang Suara WebRTC & Pesan Pendamping",
+          image: "/images/projects/bertemanyuk/ruang-suara.png",
+          points: [
+            "Koneksi suara real-time secara peer-to-peer melalui WebRTC dengan tombol Gabung Ruang Suara, Nyalakan Mikrofon & Gabung, serta menu Pengaturan Suara.",
+            "Terintegrasi dengan panel Pesan Pendamping di sisi kanan sehingga anggota tetap dapat berkirim pesan teks tanpa meninggalkan ruang panggilan suara.",
+            "Menampilkan indikator jumlah peserta aktif di ruang dan status koneksi panggilan secara langsung.",
+          ],
+        },
+        {
+          module: "4. Pengorganisasian Topik Komunitas",
+          title: "Ruang Koleksi & Sub-Kategori (galery-coding)",
+          image: "/images/projects/bertemanyuk/ruang-koleksi.png",
+          points: [
+            "Wadah khusus untuk mengelompokkan ruang diskusi berdasarkan topik dan sub-kategori minat anggota.",
+            "Dilengkapi tombol + Tambah Ruang dan Pengaturan Koleksi bagi pemilik/pengelola server.",
+            "Menampilkan kartu ruang diskusi teks & media lengkap dengan indikator jumlah anggota aktif serta akses cepat Buka Ruang Obrolan.",
+          ],
+        },
+      ],
+    },
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "WebRTC",
+      "OAuth (Google & GitHub)",
+      "Real-Time Chat",
+    ],
+    learned: [
+      "Merancang arsitektur komunikasi suara peer-to-peer berbasis WebRTC beserta manajemen sinyal dan pengaturan audio pengguna.",
+      "Membangun tata letak aplikasi komunitas multi-panel (server, daftar kanal, area obrolan, pesan pendamping, dan panel kehadiran anggota).",
+      "Mengimplementasikan parser fitur teks interaktif (kode, spoiler, polling, mention) dan pengelompokan kanal berbasis koleksi sub-kategori.",
+    ],
+    date: "2026-11",
+    category: "Web",
+    github: "",
+    live: "",
+    featured: true,
+    pinned: true,
+  },
+  {
+    id: "charactertodolist",
+    slug: "charactertodolist",
+    title: "QuestLife RPG (Character To-Do List) — Manajemen Rutinitas Bergamifikasi",
+    description:
+      "Aplikasi manajemen tugas dan kebiasaan harian berbasis gamifikasi RPG dengan sistem EXP, Gold, Tavern, inventaris grid, Mode Guest sandbox, dan notifikasi Telegram.",
+    overview:
+      "QuestLife RPG (Character To-Do List) adalah aplikasi manajemen produktivitas dan rutinitas harian berbasis Laravel yang mengubah daftar tugas menjadi petualangan RPG. Setiap misi (Quest) dan kebiasaan (Habit) yang diselesaikan memberikan EXP, Gold, dan menambah rentetan hari (Streak) karakter; sebaliknya, misi yang terlewat akan berdampak pada kondisi karakter. Pengguna juga dapat membelanjakan Gold di Tavern, membuat Custom Reward pribadi, menata barang dalam tas inventaris berbasis grid, mencatat refleksi di Jurnal, serta menerima pengingat otomatis melalui Telegram Bot.",
+    highlights: [
+      {
+        title: "Gamification Engine & Progresi Level",
+        description:
+          "Menghitung perolehan EXP dan Gold berdasarkan tingkat kesulitan misi, menaikkan level dengan kurva progresif (MaxEXP = Level × 150 + Level² × 25), serta melacak streak harian secara otomatis.",
+      },
+      {
+        title: "Manajemen Misi (Quest) & Habit",
+        description:
+          "Mendukung tugas sekali selesai maupun kebiasaan berulang (HABIT), catatan refleksi saat menyelesaikan tugas, serta pencatatan penalti ketika misi terlewat (miss).",
+      },
+      {
+        title: "Tavern, Custom Reward & Inventaris Grid",
+        description:
+          "Toko Tavern tempat menukar Gold dengan item atau membuat Custom Reward pribadi, dikelola melalui sistem tas inventaris berbasis grid (pindah slot, gunakan, atau buang item).",
+      },
+      {
+        title: "Alun-Alun, Jurnal & Gudang Pribadi",
+        description:
+          "Menyediakan papan pengumuman komunitas (Alun-Alun), histori aktivitas & refleksi karakter (Jurnal), serta penyimpanan berkas dan galeri gambar pribadi (Gudang).",
+      },
+      {
+        title: "Mode Guest Sandbox & Telegram Bot",
+        description:
+          "Mode Guest berbasis sesi untuk mencoba seluruh mekanik RPG tanpa daftar akun dan tanpa menulis ke database, ditambah integrasi Webhook Telegram untuk notifikasi tugas.",
+      },
+      {
+        title: "Program Wali Kota (Admin Control Panel)",
+        description:
+          "Peran khusus Wali Kota untuk mengatur NPC, menyesuaikan harga dan menyegarkan stok Tavern, menerbitkan pengumuman Alun-Alun, serta mengelola akun warga.",
+      },
+    ],
+    thumbnail: "/images/projects/charactertodolist.svg",
+    images: ["/images/projects/charactertodolist.svg"],
+    documentation: [
+      "Dibangun menggunakan Laravel 13, PHP 8.3+, Tailwind CSS v4, dan Vite 8 dengan pemisahan layer Service yang rapi (GamificationEngine, InventoryGridService, GuestSandboxService, TelegramNotifier).",
+      "Transaksi database atomik dengan row-level locking (lockForUpdate) saat penyelesaian misi agar kalkulasi EXP, Gold, dan level-up konsisten tanpa race condition.",
+      "Arsitektur 10 model relasional (User, UserCharacter, Quest, ShopItem, TavernStock, TavernSetting, UserInventory, ActivityLog, InformationBoard, WarehouseItem).",
+      "Middleware kustom auth.or.guest untuk mendukung perpindahan mulus antara pengguna terdaftar dan sesi Mode Guest sandbox, serta middleware role walikota untuk panel manajemen ekonomi.",
+      "Endpoint API webhook Telegram (/api/telegram/webhook) terintegrasi dengan pengujian koneksi langsung dari halaman pengaturan profil."
+    ],
+    tech: [
+      "Laravel 13",
+      "PHP 8.3",
+      "Tailwind CSS v4",
+      "Vite 8",
+      "SQLite / MySQL",
+      "Telegram Bot API",
+      "RBAC",
+    ],
+    learned: [
+      "Merancang service-layer Gamification Engine yang transaksional dan aman terhadap konkurensi menggunakan DB::transaction dan lockForUpdate.",
+      "Membangun sistem Guest Sandbox berbasis session sehingga pengunjung dapat merasakan pengalaman penuh aplikasi tanpa mengotori basis data produksi.",
+      "Mengintegrasikan webhook Telegram Bot dan mekanisme inventaris grid dinamis dalam aplikasi web Laravel modern.",
+    ],
+    date: "2026-11",
+    category: "Web",
+    github: "",
+    live: "",
+    featured: true,
+    pinned: true,
+  },
+  {
     id: "bedahkarya",
     slug: "bedahkarya",
     title: "BedahKarya — Platform Komunitas Kreatif & Bedah Karya",
     description:
-      "Platform jejaring sosial dan komunitas kreatif berbasis web yang terinspirasi dari Lahelu, Instagram, dan Discord. Dirancang untuk berbagi karya visual maupun tulisan, membedah desain dan kode secara konstruktif, berdiskusi lewat komentar & DM, serta mengikuti event komunitas dalam ekosistem moderasi yang aman.",
+      "Platform komunitas kreatif terinspirasi dari Lahelu, Instagram, dan Discord untuk berbagi karya, berdiskusi konstruktif, DM, dan mengikuti event komunitas.",
+    overview:
+      "BedahKarya adalah platform jejaring sosial dan komunitas kreatif berbasis web yang terinspirasi dari perpaduan Lahelu, Instagram, dan Discord. Aplikasi ini menggabungkan feed konten berkategori & meme (Lahelu), galeri eksplorasi visual & DM sosial (Instagram), serta sistem moderasi peran, badge spesial, dan event komunitas (Discord) dalam satu ekosistem yang terkurasi dan aman.",
     thumbnail: "/images/projects/bedahkarya/eksplorasi.jpg",
     images: [
       "/images/projects/bedahkarya/eksplorasi.jpg",

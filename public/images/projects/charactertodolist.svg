@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17120e" />
+      <stop offset="100%" stop-color="#221913" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97745" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+    <linearGradient id="hp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+    <linearGradient id="exp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)" />
+
+  <!-- Top Navbar -->
+  <rect x="0" y="0" width="1200" height="68" fill="#1e1611" />
+  <line x1="0" y1="68" x2="1200" y2="68" stroke="#443429" stroke-width="1" />
+
+  <!-- Brand -->
+  <rect x="44" y="16" width="36" height="36" rx="10" fill="#c25e32" />
+  <text x="62" y="40" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#fef3c7" text-anchor="middle">QL</text>
+  <text x="94" y="34" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#f5ede3">QuestLife RPG</text>
+  <text x="94" y="50" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a89382">Character To-Do List · Manajemen Rutinitas</text>
+
+  <!-- Nav Links -->
+  <rect x="370" y="19" width="96" height="30" rx="8" fill="#35261c" stroke="#c25e32" stroke-width="1" />
+  <text x="418" y="39" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#fbbf24" text-anchor="middle">Dashboard</text>
+  <text x="515" y="39" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#cbb7a6" text-anchor="middle">Misi &amp; Habit</text>
+  <text x="615" y="39" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#cbb7a6" text-anchor="middle">Alun-Alun</text>
+  <text x="705" y="39" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#cbb7a6" text-anchor="middle">Tavern</text>
+  <text x="780" y="39" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#cbb7a6" text-anchor="middle">Jurnal</text>
+  <text x="860" y="39" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#cbb7a6" text-anchor="middle">Gudang</text>
+
+  <!-- Gold & Streak Pill -->
+  <rect x="975" y="19" width="88" height="30" rx="15" fill="#2b2016" stroke="#ca8a04" stroke-width="1" />
+  <text x="1019" y="39" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#facc15" text-anchor="middle">480 Gold</text>
+  <rect x="1074" y="19" width="82" height="30" rx="15" fill="#2b2016" stroke="#ea580c" stroke-width="1" />
+  <text x="1115" y="39" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#fb923c" text-anchor="middle">12 Hari</text>
+
+  <!-- Left Column: Character Card -->
+  <rect x="44" y="96" width="356" height="535" rx="18" fill="#221913" stroke="#443429" stroke-width="1.5" />
+  <rect x="68" y="122" width="72" height="72" rx="16" fill="#3a281d" stroke="#d97745" stroke-width="1.5" />
+  <text x="104" y="166" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="800" fill="#fde68a" text-anchor="middle">LV 7</text>
+
+  <text x="156" y="146" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#f5ede3">Kesatria Produktif</text>
+  <text x="156" y="168" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a89382">@north_dev · Warga Kota</text>
+  <rect x="156" y="178" width="110" height="22" rx="11" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+  <text x="211" y="193" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#7dd3fc" text-anchor="middle">Telegram Aktif</text>
+
+  <!-- HP Bar -->
+  <text x="68" y="232" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#e7d7c9">HP Karakter</text>
+  <text x="376" y="232" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#fca5a5" text-anchor="end">92 / 100</text>
+  <rect x="68" y="242" width="308" height="12" rx="6" fill="#33251c" />
+  <rect x="68" y="242" width="282" height="12" rx="6" fill="url(#hp)" />
+
+  <!-- EXP Bar -->
+  <text x="68" y="284" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#e7d7c9">EXP Menuju Level 8</text>
+  <text x="376" y="284" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#7dd3fc" text-anchor="end">1.740 / 2.275</text>
+  <rect x="68" y="294" width="308" height="12" rx="6" fill="#33251c" />
+  <rect x="68" y="294" width="235" height="12" rx="6" fill="url(#exp)" />
+
+  <!-- Inventory Grid Preview -->
+  <text x="68" y="346" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#f5ede3">Tas Inventaris Grid (4x2)</text>
+  <g transform="translate(68, 360)">
+    <rect x="0" y="0" width="70" height="64" rx="10" fill="#2c2017" stroke="#c25e32" stroke-width="1" />
+    <text x="35" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#fbbf24" text-anchor="middle">Ramuan</text>
+    <text x="35" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#a89382" text-anchor="middle">+20 HP</text>
+
+    <rect x="79" y="0" width="70" height="64" rx="10" fill="#2c2017" stroke="#38bdf8" stroke-width="1" />
+    <text x="114" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#7dd3fc" text-anchor="middle">Kopi</text>
+    <text x="114" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#a89382" text-anchor="middle">Reward</text>
+
+    <rect x="158" y="0" width="70" height="64" rx="10" fill="#2c2017" stroke="#443429" stroke-width="1" />
+    <text x="193" y="30" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#a7f3d0" text-anchor="middle">Tiket</text>
+    <text x="193" y="48" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#a89382" text-anchor="middle">Custom</text>
+
+    <rect x="237" y="0" width="70" height="64" rx="10" fill="#1b140f" stroke="#382a20" stroke-width="1" stroke-dasharray="4 3" />
+
+    <rect x="0" y="74" width="70" height="64" rx="10" fill="#1b140f" stroke="#382a20" stroke-width="1" stroke-dasharray="4 3" />
+    <rect x="79" y="74" width="70" height="64" rx="10" fill="#1b140f" stroke="#382a20" stroke-width="1" stroke-dasharray="4 3" />
+    <rect x="158" y="74" width="70" height="64" rx="10" fill="#1b140f" stroke="#382a20" stroke-width="1" stroke-dasharray="4 3" />
+    <rect x="237" y="74" width="70" height="64" rx="10" fill="#1b140f" stroke="#382a20" stroke-width="1" stroke-dasharray="4 3" />
+  </g>
+
+  <!-- Mode Guest Sandbox Tag -->
+  <rect x="68" y="534" width="308" height="72" rx="12" fill="#2a1f17" stroke="#574132" stroke-width="1" />
+  <text x="86" y="560" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#fde68a">Gamification Engine · Laravel 13</text>
+  <text x="86" y="582" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#cbb7a6">Guest Sandbox · Program Wali Kota · Jurnal</text>
+
+  <!-- Right Column: Active Quests & Habit Panel -->
+  <rect x="424" y="96" width="732" height="535" rx="18" fill="#221913" stroke="#443429" stroke-width="1.5" />
+  <text x="454" y="138" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#f5ede3">Papan Misi &amp; Rutinitas Harian</text>
+  <text x="454" y="160" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a89382">Selesaikan misi untuk meraih EXP, Gold, dan menjaga Streak harian Anda.</text>
+  <rect x="1008" y="118" width="120" height="36" rx="10" fill="url(#accent)" />
+  <text x="1068" y="141" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#1c140e" text-anchor="middle">+ Tambah Misi</text>
+
+  <!-- Quest Card 1 -->
+  <rect x="454" y="186" width="674" height="96" rx="14" fill="#2b2018" stroke="#574132" stroke-width="1" />
+  <rect x="474" y="204" width="64" height="22" rx="6" fill="#422006" stroke="#f59e0b" stroke-width="1" />
+  <text x="506" y="219" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" fill="#fbbf24" text-anchor="middle">HABIT</text>
+  <text x="550" y="220" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#f5ede3">Latihan Algoritma &amp; Refactor Kode 45 Menit</text>
+  <text x="474" y="248" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#cbb7a6">Kesulitan: Menengah  ·  Hadiah: +85 EXP  ·  +35 Gold</text>
+  <rect x="1004" y="212" width="104" height="36" rx="9" fill="#15803d" />
+  <text x="1056" y="235" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#ecfdf5" text-anchor="middle">Selesaikan</text>
+
+  <!-- Quest Card 2 -->
+  <rect x="454" y="298" width="674" height="96" rx="14" fill="#2b2018" stroke="#574132" stroke-width="1" />
+  <rect x="474" y="316" width="64" height="22" rx="6" fill="#3b0764" stroke="#c084fc" stroke-width="1" />
+  <text x="506" y="331" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" fill="#e9d5ff" text-anchor="middle">EPIC</text>
+  <text x="550" y="332" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#f5ede3">Selesaikan Dokumentasi API &amp; Deploy Portofolio</text>
+  <text x="474" y="360" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#cbb7a6">Kesulitan: Sulit  ·  Hadiah: +160 EXP  ·  +75 Gold  ·  Custom Reward Terhubung</text>
+  <rect x="1004" y="324" width="104" height="36" rx="9" fill="#15803d" />
+  <text x="1056" y="347" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#ecfdf5" text-anchor="middle">Selesaikan</text>
+
+  <!-- Quest Card 3 -->
+  <rect x="454" y="410" width="674" height="96" rx="14" fill="#2b2018" stroke="#574132" stroke-width="1" />
+  <rect x="474" y="428" width="64" height="22" rx="6" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1" />
+  <text x="506" y="443" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" fill="#bae6fd" text-anchor="middle">DAILY</text>
+  <text x="550" y="444" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#f5ede3">Catat Refleksi Harian di Jurnal &amp; Cek Alun-Alun</text>
+  <text x="474" y="472" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#cbb7a6">Kesulitan: Ringan  ·  Hadiah: +40 EXP  ·  +15 Gold</text>
+  <rect x="1004" y="436" width="104" height="36" rx="9" fill="#334155" />
+  <text x="1056" y="459" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#cbd5e1" text-anchor="middle">Selesai</text>
+
+  <!-- Bottom Feature Strip -->
+  <rect x="454" y="528" width="212" height="78" rx="12" fill="#1b140f" stroke="#443429" stroke-width="1" />
+  <text x="472" y="555" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#fbbf24">Tavern &amp; Custom Reward</text>
+  <text x="472" y="576" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a89382">Tukar Gold jadi hadiah pribadi</text>
+
+  <rect x="685" y="528" width="212" height="78" rx="12" fill="#1b140f" stroke="#443429" stroke-width="1" />
+  <text x="703" y="555" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#7dd3fc">Notifikasi Telegram Bot</text>
+  <text x="703" y="576" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a89382">Webhook &amp; pengingat misi</text>
+
+  <rect x="916" y="528" width="212" height="78" rx="12" fill="#1b140f" stroke="#443429" stroke-width="1" />
+  <text x="934" y="555" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#86efac">Gudang &amp; Wali Kota</text>
+  <text x="934" y="576" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a89382">Storage file &amp; kontrol ekonomi</text>
+</svg>
