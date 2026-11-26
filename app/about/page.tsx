@@ -33,7 +33,7 @@ export default function AboutPage() {
 
         <div className="mt-10 grid gap-10 lg:grid-cols-3 print:grid-cols-3 print:gap-8">
           {/* MAIN */}
-          <main className="space-y-10 lg:col-span-2 print:col-span-2">
+          <div className="space-y-10 lg:col-span-2 print:col-span-2">
             <CvSection number="01" title="Profile">
               <p className="text-sm leading-relaxed text-foam-300 print:text-gray-800">
                 {profile.summary}
@@ -55,7 +55,7 @@ export default function AboutPage() {
             <CvSection number="05" title="Activities">
               <CvActivities items={activities} />
             </CvSection>
-          </main>
+          </div>
 
           {/* SIDEBAR */}
           <aside className="space-y-10">

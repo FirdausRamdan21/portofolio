@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, ArrowUpRight } from "lucide-react";
+import { Mail } from "lucide-react";
 import { profile } from "@/data/profile";
 import {
   GithubIcon,

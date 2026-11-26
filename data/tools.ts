@@ -44,7 +44,6 @@ export const toolNotes: ToolNote[] = [
     title: "Git Cheatsheet",
     description: "Kumpulan perintah Git yang sering dipakai.",
     type: "Note",
-    url: "/documents/git-cheatsheet.pdf",
   },
   {
     id: "setup-laravel",

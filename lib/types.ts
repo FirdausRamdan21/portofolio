@@ -2,7 +2,7 @@ export type Service = {
   id: string;
   title: string;
   description: string;
-  icon: "code" | "layout" | "server" | "chart" | "video";
+  icon: "code" | "layout" | "server" | "database" | "chart" | "video";
 };
 
 export type Skill = {

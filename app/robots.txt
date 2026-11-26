@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://portofolio-lkpd.vercel.app/sitemap.xml

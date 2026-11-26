@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import type { Project } from "@/lib/types";
-import { cn } from "@/lib/utils";
+import { cn, formatMonthYear } from "@/lib/utils";
 import Tag from "./tag";
+import { GithubIcon } from "./brand-icons";
 
 export default function ProjectCard({
   project,
@@ -45,7 +46,7 @@ export default function ProjectCard({
               {project.category}
             </span>
             <span className="rounded-full bg-abyss-950/85 px-2.5 py-0.5 text-[10px] font-semibold text-foam-400 backdrop-blur-md">
-              {project.date}
+              {formatMonthYear(project.date)}
             </span>
           </div>
 
@@ -55,6 +56,7 @@ export default function ProjectCard({
                 src={project.logo}
                 alt={`Logo ${project.title}`}
                 fill
+                sizes="36px"
                 className="object-contain p-0.5"
               />
             </div>
@@ -103,7 +105,7 @@ export default function ProjectCard({
               className="text-foam-400 hover:text-white transition-colors"
               title="GitHub Repository"
             >
-              <Github className="h-4 w-4" />
+              <GithubIcon className="h-4 w-4" />
             </a>
           )}
           {project.live && (

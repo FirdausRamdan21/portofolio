@@ -14,20 +14,12 @@
   --color-coral-500: #0284c7;
   --color-foam-50: #f8fafc;
   --color-foam-100: #f1f5f9;
-  --color-foam-300: #94a3b8;
+  --color-foam-200: #e2e8f0;
+  --color-foam-300: #cbd5e1;
+  --color-foam-400: #94a3b8;
   --color-foam-500: #64748b;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-@keyframes pulse-subtle {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
 }
 
 /* Base */

@@ -61,6 +61,7 @@ export default function ProjectModal({
                 src={project.logo}
                 alt={`Logo ${project.title}`}
                 fill
+                sizes="48px"
                 className="object-contain p-0.5"
               />
             </div>

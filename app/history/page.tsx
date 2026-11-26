@@ -1,13 +1,15 @@
 import { history } from "@/data/history";
 import { certificates } from "@/data/certificates";
 import { buildMetadata } from "@/lib/seo";
+import { formatMonthYear } from "@/lib/utils";
 import SectionTitle from "@/components/section-title";
 import Timeline from "@/components/timeline";
-import { Award, GraduationCap } from "lucide-react";
+import { Award } from "lucide-react";
 
 export const metadata = buildMetadata({
   title: "Riwayat Pendidikan & Sertifikasi — Firdaus Ramdan",
-  description: "Riwayat pendidikan formal, pelatihan terstruktur, dan sertifikasi rekayasa perangkat lunak Firdaus Ramdan.",
+  description:
+    "Riwayat pendidikan formal, pelatihan terstruktur, dan sertifikasi rekayasa perangkat lunak Firdaus Ramdan.",
   path: "/history",
 });
 
@@ -17,6 +19,8 @@ export default function HistoryPage() {
       {/* Education Timeline */}
       <div className="mb-14">
         <SectionTitle
+          as="h1"
+          eyebrow="Pendidikan & Pembelajaran"
           title="Pendidikan & Pelatihan"
           subtitle="Jejak pendidikan formal dan pembelajaran terstruktur dalam bidang rekayasa perangkat lunak."
         />
@@ -25,9 +29,11 @@ export default function HistoryPage() {
 
       {/* Certifications Section */}
       <div className="border-t border-abyss-800/80 pt-12">
-        <div className="flex items-center gap-2 mb-6">
+        <div className="mb-6 flex items-center gap-2">
           <Award className="h-5 w-5 text-sky-400" />
-          <h2 className="text-xl font-bold text-foam-50">Sertifikasi &amp; Lisensi Teknis</h2>
+          <h2 className="text-xl font-bold text-foam-50">
+            Sertifikasi &amp; Lisensi Teknis
+          </h2>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
@@ -38,18 +44,20 @@ export default function HistoryPage() {
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <span className="inline-block rounded-full bg-sky-500/10 px-2.5 py-0.5 text-[10px] font-bold text-sky-300 border border-sky-500/20 mb-2">
+                  <span className="mb-2 inline-block rounded-full border border-sky-500/20 bg-sky-500/10 px-2.5 py-0.5 text-[10px] font-bold text-sky-300">
                     {cert.issuer}
                   </span>
-                  <h3 className="text-sm font-bold text-foam-50 leading-snug">
+                  <h3 className="text-sm font-bold leading-snug text-foam-50">
                     {cert.title}
                   </h3>
-                  <p className="mt-2 text-xs text-foam-400">Diterbitkan: {cert.date}</p>
+                  <p className="mt-2 text-xs text-foam-400">
+                    Diterbitkan: {formatMonthYear(cert.date)}
+                  </p>
                 </div>
               </div>
 
               {cert.credentialUrl && (
-                <div className="mt-4 pt-3 border-t border-abyss-800/80">
+                <div className="mt-4 border-t border-abyss-800/80 pt-3">
                   <a
                     href={cert.credentialUrl}
                     target="_blank"

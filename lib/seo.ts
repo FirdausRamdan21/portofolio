@@ -26,7 +26,6 @@ export function buildMetadata({
   type?: "website" | "article";
 }): Metadata {
   const url = `${BASE_URL}${path}`;
-  const ogImage = image ?? "/images/og-default.png";
 
   return {
     title,
@@ -39,13 +38,16 @@ export function buildMetadata({
       siteName: SITE_NAME,
       locale: SITE.locale,
       type,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      ...(image
+        ? { images: [{ url: image, width: 1200, height: 630, alt: title }] }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [ogImage],
+      creator: SITE.twitter,
+      ...(image ? { images: [image] } : {}),
     },
   };
 }
@@ -57,6 +59,26 @@ export const baseMetadata: Metadata = {
     template: `%s`,
   },
   description: SITE.description,
+  alternates: {
+    canonical: BASE_URL,
+  },
+  openGraph: {
+    title: `${SITE_NAME} — Portfolio`,
+    description: SITE.description,
+    url: BASE_URL,
+    siteName: SITE_NAME,
+    locale: SITE.locale,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Portfolio`,
+    description: SITE.description,
+    creator: SITE.twitter,
+  },
+  verification: {
+    google: "HMdoDt_quDOK-MJws1l4hVpCxhVA_2arCzXv6AWe8YE",
+  },
   keywords: [
     "Firdaus Ramdan",
     "Firdaus Ramdan portfolio",
@@ -83,6 +105,5 @@ export const baseMetadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/icons/apple-touch-icon.png",
   },
 };

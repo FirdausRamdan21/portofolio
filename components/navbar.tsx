@@ -18,22 +18,24 @@ const navItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const mobileMenuOpen = openPath === pathname;
 
-  // Close mobile menu when route changes
   useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
-
-  // Prevent background scrolling when mobile menu is open
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
+    if (!mobileMenuOpen) {
+      document.body.style.overflow = "";
+      return;
     }
+
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenPath(null);
+    };
+    document.addEventListener("keydown", onKeyDown);
+
     return () => {
-      document.body.style.overflow = "unset";
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
     };
   }, [mobileMenuOpen]);
 
@@ -64,7 +66,8 @@ export default function Navbar() {
             const active =
               item.href === "/"
                 ? pathname === "/"
-                : pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                : pathname === item.href ||
+                  (item.href !== "/" && pathname.startsWith(item.href));
 
             return (
               <li key={item.href}>
@@ -73,8 +76,8 @@ export default function Navbar() {
                   className={cn(
                     "relative rounded-md px-3 py-1.5 text-xs font-medium transition-colors",
                     active
-                      ? "text-sky-300 font-semibold bg-sky-500/10"
-                      : "text-foam-300 hover:text-foam-50 hover:bg-abyss-900/60"
+                      ? "bg-sky-500/10 font-semibold text-sky-300"
+                      : "text-foam-300 hover:bg-abyss-900/60 hover:text-foam-50"
                   )}
                 >
                   {item.label}
@@ -101,12 +104,16 @@ export default function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <button
             type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setOpenPath(mobileMenuOpen ? null : pathname)}
             className="inline-flex items-center justify-center rounded-lg border border-abyss-700/60 bg-abyss-900/80 p-2 text-foam-200 hover:bg-abyss-800 hover:text-white focus:outline-none"
             aria-label="Toggle Menu"
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
       </div>
@@ -123,16 +130,18 @@ export default function Navbar() {
                 const active =
                   item.href === "/"
                     ? pathname === "/"
-                    : pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
+                    : pathname === item.href ||
+                      (item.href !== "/" && pathname.startsWith(item.href));
 
                 return (
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      onClick={() => setOpenPath(null)}
                       className={cn(
                         "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition-colors",
                         active
-                          ? "bg-sky-500/15 text-sky-300 font-semibold"
+                          ? "bg-sky-500/15 font-semibold text-sky-300"
                           : "text-foam-200 hover:bg-abyss-900/80 hover:text-white"
                       )}
                     >
@@ -148,18 +157,19 @@ export default function Navbar() {
 
             <div className="mt-8 border-t border-abyss-800/80 pt-6">
               <p className="px-3 text-[11px] font-bold uppercase tracking-wider text-foam-500">
-                Akses Dokumen & Kontak
+                Akses Dokumen &amp; Kontak
               </p>
               <div className="mt-3 grid grid-cols-2 gap-3">
-                <a
-                  href={profile.cvUrl}
-                  download
+                <Link
+                  href="/about"
+                  onClick={() => setOpenPath(null)}
                   className="flex items-center justify-center gap-2 rounded-xl border border-abyss-700/60 bg-abyss-900/80 px-4 py-2.5 text-xs font-semibold text-foam-100 hover:bg-abyss-800"
                 >
-                  <FileText className="h-4 w-4 text-sky-400" /> Unduh CV
-                </a>
+                  <FileText className="h-4 w-4 text-sky-400" /> Lihat CV
+                </Link>
                 <Link
                   href="/contact"
+                  onClick={() => setOpenPath(null)}
                   className="flex items-center justify-center gap-2 rounded-xl bg-sky-500 px-4 py-2.5 text-xs font-semibold text-abyss-950 hover:bg-sky-400"
                 >
                   Hubungi <ArrowUpRight className="h-4 w-4" />

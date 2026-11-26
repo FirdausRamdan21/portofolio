@@ -24,7 +24,7 @@ export default function CTA() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-foam-300">
-              Saya siap berkontribusi secara profesional untuk posisi magang (*internship*), junior web developer, maupun pengembangan proyek sistem perangkat lunak di organisasi Anda.
+              Saya siap berkontribusi secara profesional untuk posisi magang (<em className="italic text-foam-200">internship</em>), junior web developer, maupun pengembangan proyek sistem perangkat lunak di organisasi Anda.
             </p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">

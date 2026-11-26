@@ -54,7 +54,7 @@ export const profile: Profile = {
     tiktok: "https://www.tiktok.com/@mr_north9?is_from_webapp=1&sender_device=pc",
     youtube: "https://youtube.com/@mr_north",
   },
-  cvUrl: "/documents/CV-Firdaus-Ramdan.pdf",
+  cvUrl: "/about",
 
   summary:
     "Siswa Rekayasa Perangkat Lunak di SMKN 8 Jakarta dengan rekam jejak terbukti dalam membangun sistem web Full-Stack, perancangan basis data relasional terstruktur, dan REST API. Menguasai ekosistem Next.js, TypeScript, PHP/Laravel, dan Tailwind CSS, serta aktif berorganisasi dengan kemampuan pemecahan masalah dan kerja sama tim yang solid. Siap berkontribusi sebagai pengembang perangkat lunak magang atau junior web developer.",

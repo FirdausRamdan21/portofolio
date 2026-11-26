@@ -1,5 +1,5 @@
-import { Github, Globe, Linkedin, MapPin, Youtube } from "lucide-react";
-
+import { Mail, MapPin } from "lucide-react";
+import { GithubIcon, LinkedinIcon, YoutubeIcon } from "@/components/brand-icons";
 import { profile } from "@/data/profile";
 
 export default function CvHeader() {
@@ -7,17 +7,17 @@ export default function CvHeader() {
     {
       label: "github.com/FirdausRamdan21",
       href: profile.contacts.github,
-      icon: Github,
+      icon: GithubIcon,
     },
     {
       label: "linkedin.com/in/firdaus-ramdan",
       href: profile.contacts.linkedin,
-      icon: Linkedin,
+      icon: LinkedinIcon,
     },
     {
       label: "youtube.com/@mr_north",
       href: profile.contacts.youtube,
-      icon: Youtube,
+      icon: YoutubeIcon,
     },
   ].filter((link) => link.href);
 
@@ -67,7 +67,7 @@ export default function CvHeader() {
             href={`mailto:${profile.contacts.email}`}
             className="inline-flex items-center gap-1.5 rounded-full border border-abyss-700/40 bg-abyss-900/40 px-2.5 py-1 text-foam-300 transition-colors hover:border-abyss-500/60 hover:text-foam-50 print:border-gray-300 print:bg-white print:text-gray-700"
           >
-            <Globe className="h-3.5 w-3.5" />
+            <Mail className="h-3.5 w-3.5" />
             <span>{profile.contacts.email}</span>
           </a>
         )}

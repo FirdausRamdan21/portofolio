@@ -1,13 +1,5 @@
 import type { HistoryItem } from "@/lib/types";
-
-function fmt(date: string) {
-  const [y, m] = date.split("-");
-  const months = [
-    "Jan", "Feb", "Mar", "Apr", "Mei", "Jun",
-    "Jul", "Agu", "Sep", "Okt", "Nov", "Des",
-  ];
-  return `${months[parseInt(m) - 1]} ${y}`;
-}
+import { formatMonthYear } from "@/lib/utils";
 
 export default function CvEducation({ items }: { items: HistoryItem[] }) {
   return (
@@ -18,9 +10,9 @@ export default function CvEducation({ items }: { items: HistoryItem[] }) {
             <h3 className="text-sm font-semibold text-foam-100 print:text-black">
               {item.institution}
             </h3>
-            <span className="text-xs text-foam-500 print:text-gray-600">
-              {fmt(item.startDate)}
-              {item.endDate && ` — ${fmt(item.endDate)}`}
+            <span className="text-xs text-foam-400 print:text-gray-600">
+              {formatMonthYear(item.startDate)}
+              {item.endDate && ` — ${formatMonthYear(item.endDate)}`}
             </span>
           </div>
           <p className="text-xs text-foam-300 print:text-gray-700">

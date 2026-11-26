@@ -20,7 +20,7 @@ export const services: Service[] = [
     title: "Database Architecture",
     description:
       "Perancangan skema relasional terstandar, normalisasi data, query optimization, dan integrasi ORM (MySQL, PostgreSQL, Prisma).",
-    icon: "chart",
+    icon: "database",
   },
   {
     id: "ui-impl",
@@ -34,6 +34,6 @@ export const services: Service[] = [
     title: "Data Analytics & Automasi",
     description:
       "Pengolahan data operasional, penyusunan dashboard visual analitik, dan otomatisasi proses bisnis menggunakan SQL dan Python.",
-    icon: "video",
+    icon: "chart",
   },
 ];

@@ -17,7 +17,9 @@ export default function InventoryPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
       <SectionTitle
-        title="Portofolio Proyek &amp; Karya"
+        as="h1"
+        eyebrow="Portofolio & Arsip"
+        title="Portofolio Proyek & Karya"
         subtitle="Eksplorasi proyek aplikasi web, arsitektur basis data, aktivitas organisasi, dan perangkat rekayasa perangkat lunak yang telah saya bangun."
       />
       <Suspense fallback={<p className="text-sm text-foam-400">Memuat data proyek…</p>}>

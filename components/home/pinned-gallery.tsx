@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Github, ExternalLink, Sparkles, FolderGit2 } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Sparkles } from "lucide-react";
 import { projects } from "@/data/projects";
 import SectionTitle from "@/components/section-title";
 import Tag from "@/components/tag";
-import { cn } from "@/lib/utils";
+import { GithubIcon } from "@/components/brand-icons";
+import { cn, formatMonthYear } from "@/lib/utils";
 
 export default function PinnedGallery() {
   const featuredProjects = projects.filter((p) => p.featured || p.pinned);
@@ -52,7 +53,7 @@ export default function PinnedGallery() {
                   {project.category}
                 </span>
                 <span className="rounded-full bg-abyss-950/80 px-2.5 py-0.5 text-[10px] font-semibold text-foam-400 backdrop-blur-md">
-                  {project.date}
+                  {formatMonthYear(project.date)}
                 </span>
               </div>
 
@@ -62,6 +63,7 @@ export default function PinnedGallery() {
                     src={project.logo}
                     alt={`Logo ${project.title}`}
                     fill
+                    sizes="44px"
                     className="object-contain p-0.5"
                   />
                 </div>
@@ -111,7 +113,7 @@ export default function PinnedGallery() {
                       className="rounded-lg border border-abyss-700/60 bg-abyss-800/60 p-1.5 text-foam-300 hover:text-white hover:border-abyss-500 transition-colors"
                       title="Lihat Source Code di GitHub"
                     >
-                      <Github className="h-4 w-4" />
+                      <GithubIcon className="h-4 w-4" />
                     </a>
                   )}
                   {project.live && (

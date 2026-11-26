@@ -284,7 +284,7 @@ export const projects: Project[] = [
     date: "2026-11",
     category: "Web",
     github: "https://github.com/FirdausRamdan21/gudang-kereta",
-    live: "http://localhost/project%20pribadi/gudangKereta/",
+    live: "",
     featured: true,
     pinned: true,
   },

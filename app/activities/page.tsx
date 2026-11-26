@@ -30,8 +30,10 @@ const groups: { key: string; label: string; types: string[] }[] = [
 
 export default function ActivitiesPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-12">
+    <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
       <SectionTitle
+        as="h1"
+        eyebrow="Pengalaman & Rekam Jejak"
         title="Activities"
         subtitle="Arsip pengalaman organisasi, pembelajaran, kontribusi sekolah, dan karya digital. Setiap entri terhubung dengan catatan lengkap di Inventory."
       />
@@ -42,7 +44,12 @@ export default function ActivitiesPage() {
           if (!items.length) return null;
           return (
             <section key={g.key}>
-              <h3 className="mb-6 text-lg font-semibold">{g.label}</h3>
+              <div className="mb-6 flex items-center justify-between border-b border-abyss-800/80 pb-3">
+                <h2 className="text-lg font-semibold text-foam-50">{g.label}</h2>
+                <span className="rounded-full border border-abyss-700/60 bg-abyss-900/70 px-2.5 py-0.5 text-xs font-medium text-sky-300">
+                  {items.length} entri
+                </span>
+              </div>
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {items.map((a) => (
                   <Link

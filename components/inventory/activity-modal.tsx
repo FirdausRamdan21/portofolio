@@ -52,6 +52,7 @@ export default function ActivityModal({
               src={activity.image}
               alt={activity.title}
               fill
+              sizes="(max-width: 768px) 100vw, 672px"
               className="object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-abyss-900 via-transparent to-transparent" />
